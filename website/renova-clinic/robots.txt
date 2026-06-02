@@ -1,0 +1,25 @@
+User-agent: Baiduspider
+Disallow: /wp-admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+Crawl-delay: 1
+
+User-agent: Googlebot
+Disallow: /wp-admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+
+Sitemap: https://YOUR_DOMAIN/sitemap.xml
+
+# 真颜堂中医诊所 - robots.txt
+# 最后更新：2026-06-01
+# 提交到百度站长平台验证

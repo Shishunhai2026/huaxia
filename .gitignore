@@ -1,0 +1,24 @@
+# 原始资料（大文件，不纳入源码仓库）
+封面墙面宣传及易拉宝资料.zip
+RENOVA文献汇编.pdf
+Renova产品理论知识培训与交流-常州20231227.pptx
+renova产品使用说明书+正文+封面+印刷.pdf
+封面墙面宣传及易拉宝资料/
+
+# 提取的大尺寸原始图片
+website/preview/images/*.png
+website/preview/images/dm-*
+website/preview/images/slide*
+website/preview/images/brochure-*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# WordPress 不需要打包的内容（生产环境重新下载）
+# wp-content/ 保留主题即可
