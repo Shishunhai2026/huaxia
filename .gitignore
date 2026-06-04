@@ -22,3 +22,5 @@ desktop.ini
 
 # WordPress 不需要打包的内容（生产环境重新下载）
 # wp-content/ 保留主题即可
+Renova/
+*.docx
