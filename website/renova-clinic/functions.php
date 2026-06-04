@@ -97,13 +97,15 @@ add_action('wp_head', 'renova_dns_prefetch', 1);
  * SEO优化 - 自动生成Meta Keywords
  */
 function renova_meta_keywords() {
-    $keywords = '长沙ED治疗,冲击波治疗ED,Renova冲击波,勃起功能障碍,血管性ED,男性功能保养,真颜堂中医诊所,翁青山博士';
+    $keywords = '长沙治疗阳痿,长沙ED治疗,长沙冲击波治疗ED,长沙男科医院,长沙男科诊所,Renova冲击波,低能量冲击波治疗ED,体外冲击波治疗阳痿,勃起功能障碍治疗,血管性ED,硬度不够怎么办,硬不起来是什么原因,阳痿能治好吗,晨勃消失怎么恢复,长沙治疗阳痿多少钱,雨花区男科,男性功能保养,真颜堂中医诊所,翁青山博士,冲击波治疗阳痿,PDE5i无效怎么办,糖尿病ED治疗,中医治疗阳痿,不吃药治疗阳痿,阳痿怎么治疗最好';
     if (is_page('treatment')) {
-        $keywords .= ',冲击波治疗,ED治疗方案,线性冲击波';
+        $keywords .= ',低能量冲击波,ED物理治疗,线性冲击波,冲击波治疗ED效果,伟哥没效果了怎么办,阴茎假体还是冲击波好,不吃药不手术治ED';
     } elseif (is_page('faq')) {
-        $keywords .= ',ED常见问题,冲击波FAQ';
+        $keywords .= ',阳痿能彻底治好吗,长沙治疗阳痿哪家医院最好,阳痿会不会自己好,硬度不够怎么调理';
     } elseif (is_page('disease-science')) {
-        $keywords .= ',ED科普,勃起功能障碍病因,男性健康';
+        $keywords .= ',ED科普,阳痿的症状有哪些,如何判断是不是阳痿,年轻人为什么会阳痿,糖尿病会导致阳痿吗';
+    } elseif (is_page('about')) {
+        $keywords .= ',长沙男科专家,长沙看男科最好的医生,长沙中医男科专家';
     } elseif (is_single()) {
         $tags = wp_get_post_tags(get_the_ID(), array('fields' => 'names'));
         if ($tags) $keywords .= ',' . implode(',', $tags);
