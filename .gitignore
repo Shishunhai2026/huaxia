@@ -24,3 +24,4 @@ desktop.ini
 # wp-content/ 保留主题即可
 Renova/
 *.docx
+.claude/settings.local.json
