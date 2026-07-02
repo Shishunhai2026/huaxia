@@ -25,3 +25,4 @@ desktop.ini
 Renova/
 *.docx
 .claude/settings.local.json
+.omc/

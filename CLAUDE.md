@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-真颜堂中医诊所 (Zhenyan Tang TCM Clinic) — a medical clinic in Changsha, Hunan, offering Renova linear shockwave therapy for vascular erectile dysfunction (ED). The website is a patient-acquisition tool targeting Hunan-based users searching for ED-related keywords on Baidu and AI-powered search engines (豆包, Kimi, 秘塔).
+星沙华夏医院 (Xingsha Huaxia Hospital) — a hospital in Changsha County, Hunan, offering Renova linear shockwave therapy for vascular erectile dysfunction (ED). The website is a patient-acquisition tool targeting Hunan-based users searching for ED-related keywords on Baidu and AI-powered search engines (豆包, Kimi, 秘塔).
 
 **Two parallel deliverables live in `website/`:**
 
@@ -15,10 +15,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Clinic info (hardcoded throughout — use `grep` + `sed` to batch-replace if renamed)
 
-- Name: 真颜堂中医诊所
+- Name: 星沙华夏医院
 - Doctor: 翁青山 博士 (PhD)
-- Address: 长沙市雨花区沙湾路品缦芸酒店5楼
-- Phone: 18973134733
+- Address: 长沙县星沙镇北斗路16号（星沙汽车站斜对面）
+- Phone: 15909415555
 - Device: Renova (国械注进20173095171), 3600-5000 shots/session
 - Price: 9600元/4-session course
 

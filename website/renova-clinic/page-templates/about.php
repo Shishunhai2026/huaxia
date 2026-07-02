@@ -11,7 +11,7 @@ renova_breadcrumb();
 <section class="page-header">
     <div class="container">
         <h1>关于我们</h1>
-        <p class="page-desc">10年+临床经验 · 以色列原装设备 · 长沙岳麓区</p>
+        <p class="page-desc">10年+临床经验 · 以色列原装设备 · 长沙县星沙镇</p>
     </div>
 </section>
 
@@ -21,9 +21,9 @@ renova_breadcrumb();
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px;">
             <div>
                 <span class="section-label">诊所简介</span>
-                <h2 style="margin-bottom:20px;">真颜堂中医诊所</h2>
+                <h2 style="margin-bottom:20px;">星沙华夏医院</h2>
                 <p style="font-size:1.05rem;color:var(--text-gray);line-height:2;margin-bottom:16px;">
-                    真颜堂中医诊所位于长沙市雨花区沙湾路品缦芸酒店5楼，是一所经卫生部门批准设立的<strong>中西医结合医疗机构</strong>，
+                    星沙华夏医院位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），是一所经卫生部门批准设立的<strong>中西医结合医疗机构</strong>，
                     持医疗执业许可证，已服务长沙及周边地区患者<strong>10余年</strong>。
                 </p>
                 <p style="font-size:1.05rem;color:var(--text-gray);line-height:2;margin-bottom:16px;">

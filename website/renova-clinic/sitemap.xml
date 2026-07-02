@@ -1,74 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <!--
-  真颜堂中医诊所 - XML Sitemap
+  星沙华夏医院 - XML Sitemap
   提交到百度站长平台：https://ziyuan.baidu.com/linksubmit/
   提交到Google Search Console：https://search.google.com/search-console/
   更新频率：每次新增页面或文章后更新
+  版本：2.0 — 完整SEO优化版（基于200+关键词报告）
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/">
+        xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-    <!-- 核心页面 - 高优先级 -->
+    <!-- 首页 - 最高优先级 -->
     <url>
         <loc>https://YOUR_DOMAIN/</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
+    <!-- 核心服务页 -->
     <url>
         <loc>https://YOUR_DOMAIN/treatment</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
+    <!-- 费用说明页 -->
     <url>
-        <loc>https://YOUR_DOMAIN/about</loc>
-        <lastmod>2026-06-01</lastmod>
+        <loc>https://YOUR_DOMAIN/pricing</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+
+    <!-- 方案对比页 -->
+    <url>
+        <loc>https://YOUR_DOMAIN/treatment-comparison</loc>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
+    <!-- 关于我们 -->
+    <url>
+        <loc>https://YOUR_DOMAIN/about</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+
+    <!-- 疾病科普 -->
     <url>
         <loc>https://YOUR_DOMAIN/disease-science</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
-    <url>
-        <loc>https://YOUR_DOMAIN/clinical-evidence</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <mobile:mobile type="pc,mobile"/>
-    </url>
 
+    <!-- 症状自查 -->
     <url>
-        <loc>https://YOUR_DOMAIN/faq</loc>
-        <lastmod>2026-06-01</lastmod>
+        <loc>https://YOUR_DOMAIN/symptom-check</loc>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
+    <!-- 男性保养 -->
+    <url>
+        <loc>https://YOUR_DOMAIN/mens-health</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+
+    <!-- 临床证据 -->
+    <url>
+        <loc>https://YOUR_DOMAIN/clinical-evidence</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+
+    <!-- FAQ -->
+    <url>
+        <loc>https://YOUR_DOMAIN/faq</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+
+    <!-- 治疗案例 -->
     <url>
         <loc>https://YOUR_DOMAIN/patient-cases</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
+    <!-- 联系我们 -->
     <url>
         <loc>https://YOUR_DOMAIN/contact</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>

@@ -27,7 +27,7 @@ renova_breadcrumb();
                         <div class="icon">📍</div>
                         <div>
                             <h4>诊所地址</h4>
-                            <p><?php echo get_option('renova_address', '长沙市雨花区沙湾路品缦芸酒店5楼（详细地址请致电或微信咨询，确保私密就诊）'); ?></p>
+                            <p><?php echo get_option('renova_address', '长沙县星沙镇北斗路16号（星沙汽车站斜对面）（详细地址请致电或微信咨询，确保私密就诊）'); ?></p>
                         </div>
                     </div>
                     <div class="contact-info-item">

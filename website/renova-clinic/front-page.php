@@ -1,6 +1,6 @@
 <?php
 /**
- * 首页模板 - 真颜堂中医诊所
+ * 首页模板 - 星沙华夏医院
  *
  * 包含：Hero区、核心优势、治疗介绍、数据展示、客户见证、FAQ、CTA
  * SEO关键词密度：长沙ED治疗、Renova冲击波、血管性勃起功能障碍、男性功能保养
@@ -21,6 +21,10 @@ get_header();
                     非侵入 · 不手术 · 不吃药 · 无痛治疗<br>
                     <strong>轻中度血管性勃起功能障碍有效率90%以上</strong><br>
                     国内外权威指南推荐的ED一线治疗方案
+                </p>
+                <p style="font-size:1rem;color:var(--text-gray);margin-bottom:20px;line-height:1.6;">
+                    长沙县星沙镇北斗路16号（星沙汽车站斜对面）· 翁青山博士坐诊<br>
+                    针对硬度不够、晨勃消失、中途疲软、PDE5i无效等ED问题提供专业诊疗
                 </p>
                 <div class="hero-features">
                     <span class="hero-feature-item"><span class="icon-check">✓</span> 欧盟CE认证</span>
@@ -45,12 +49,40 @@ get_header();
     </div>
 </section>
 
+<!-- 快速导航：症状自查 + 费用了解 -->
+<section class="section section-white" style="padding:40px 0;">
+    <div class="container">
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <a href="<?php echo home_url('/symptom-check'); ?>" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+                <div class="card-icon">🔍</div>
+                <h3>ED症状自查</h3>
+                <p style="color:var(--text-gray);font-size:0.9rem;">硬度不够？晨勃消失？在线自测勃起功能</p>
+            </a>
+            <a href="<?php echo home_url('/pricing'); ?>" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+                <div class="card-icon">💰</div>
+                <h3>治疗费用透明</h3>
+                <p style="color:var(--text-gray);font-size:0.9rem;">冲击波治疗多少钱？各方案费用对比</p>
+            </a>
+            <a href="<?php echo home_url('/treatment-comparison'); ?>" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+                <div class="card-icon">📊</div>
+                <h3>治疗方案对比</h3>
+                <p style="color:var(--text-gray);font-size:0.9rem;">冲击波vs吃药vs手术，哪种适合您？</p>
+            </a>
+            <a href="<?php echo home_url('/mens-health'); ?>" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+                <div class="card-icon">💪</div>
+                <h3>男性功能保养</h3>
+                <p style="color:var(--text-gray);font-size:0.9rem;">如何预防阳痿？运动饮食生活方式建议</p>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- 核心优势 -->
 <section class="section section-white">
     <div class="container">
         <div class="section-header">
             <span class="section-label">为什么选择我们</span>
-            <h2 class="section-title">长沙领先的冲击波ED治疗诊所</h2>
+            <h2 class="section-title">长沙领先的冲击波ED治疗医院</h2>
             <p class="section-desc">10年+临床经验 · 以色列原装进口设备 · 私密就诊环境</p>
         </div>
         <div class="card-grid">
@@ -194,7 +226,7 @@ get_header();
             </div>
             <div class="testimonial-card">
                 <p class="quote">"40岁以后明显感觉勃起功能不如以前了，听朋友介绍来做保养性治疗。做了之后晨勃恢复了，硬度也提高了，很满意。"</p>
-                <p class="author">— 长沙市雨花区沙湾路品缦芸酒店5楼 · 45岁 · 男性功能保养 · 治疗时间：2024年</p>
+                <p class="author">— 长沙县星沙镇北斗路16号（星沙汽车站斜对面） · 45岁 · 男性功能保养 · 治疗时间：2024年</p>
             </div>
         </div>
     </div>
@@ -241,6 +273,29 @@ get_header();
         </div>
         <div style="text-align:center;margin-top:32px;">
             <a href="<?php echo home_url('/faq'); ?>" class="btn btn-outline">查看更多常见问题</a>
+        </div>
+    </div>
+</section>
+
+<!-- 长沙各区就诊指南 -->
+<section class="section section-white" style="padding:40px 0;">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">服务范围</span>
+            <h2 class="section-title">长沙各区及周边便捷就诊</h2>
+            <p class="section-desc">位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），交通便利，私密就诊环境</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px;">
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">芙蓉区男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">岳麓区男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">雨花区男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">天心区男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">开福区男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">望城区男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">长沙县男科</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">星沙男科医院</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">株洲男科就诊</span>
+            <span style="background:var(--bg-warm);padding:8px 20px;border-radius:50px;font-size:0.9rem;color:var(--text-gray);">湘潭男科就诊</span>
         </div>
     </div>
 </section>

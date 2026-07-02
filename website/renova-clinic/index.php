@@ -58,26 +58,7 @@ renova_breadcrumb();
             </div>
 
             <aside class="sidebar">
-                <div class="sidebar-widget">
-                    <h4>文章分类</h4>
-                    <ul class="sidebar-nav">
-                        <?php wp_list_categories(array('title_li' => '', 'hide_empty' => true)); ?>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget">
-                    <h4>近期文章</h4>
-                    <ul class="sidebar-nav">
-                        <?php
-                        $recent = wp_get_recent_posts(array('numberposts' => 6));
-                        foreach ($recent as $post) {
-                            echo '<li><a href="' . get_permalink($post['ID']) . '">' . $post['post_title'] . '</a></li>';
-                        }
-                        ?>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget" style="text-align:center;">
+<div class="sidebar-widget" style="text-align:center;">
                     <h4>需要帮助？</h4>
                     <p style="font-size:0.9rem;color:var(--text-gray);">专业医生为您解答</p>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary" style="width:100%;">立即咨询</a>

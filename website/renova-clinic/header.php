@@ -26,7 +26,7 @@
                     <span>R</span>
                 </a>
                 <a href="<?php echo home_url(); ?>" class="site-title" style="color:var(--text-dark);">
-                    真颜堂中医诊所
+                    星沙华夏医院
                     <small>Renova线性冲击波 · 专业ED治疗</small>
                 </a>
             <?php endif; ?>

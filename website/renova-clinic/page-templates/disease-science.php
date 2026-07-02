@@ -2,134 +2,151 @@
 /**
  * Template Name: 疾病科普
  *
- * ED疾病科普文章列表 + 重点科普内容
+ * ED科普专栏 — 13篇系列文章的完整列表页
+ * 基于100篇权威医学文献汇编，翁青山博士审核
+ * 支持 ?article=slug 直接查看单篇文章
+ * 目标关键词：ED科普、阳痿知识、勃起功能障碍
  */
 get_header();
 renova_breadcrumb();
+
+// 文章查看模式：?article=xxx
+$article_slug = isset($_GET['article']) ? sanitize_text_field($_GET['article']) : '';
+$article_file = '';
+$article_content = '';
+
+if ($article_slug) {
+    // 文件名带数字前缀，如 01-chongjibo-ED-xiaoguo.html
+    $pattern = RENOVA_DIR . '/articles/*-' . basename($article_slug) . '.html';
+    $matches = glob($pattern);
+    if (!empty($matches)) {
+        $article_file = $matches[0];
+        $article_content = file_get_contents($article_file);
+        $article_content = preg_replace('/^<!--[\s\S]*?-->\s*/', '', $article_content);
+        preg_match('/<h2[^>]*>(.*?)<\/h2>/', $article_content, $matches2);
+        $article_title = $matches2[1] ?? '科普文章';
+    }
+}
 ?>
 
+<?php if ($article_slug && $article_content): ?>
+<!-- ===== 单篇文章视图 ===== -->
+<section class="page-header">
+    <div class="container">
+        <h1><?php echo esc_html(strip_tags($article_title)); ?></h1>
+        <p class="page-desc">ED科普专栏 · 翁青山博士审核 · <a href="<?php echo home_url('/disease-science'); ?>">← 返回科普列表</a></p>
+    </div>
+</section>
+<section class="section section-white">
+    <div class="container" style="max-width:780px;">
+        <article class="article-detail">
+            <div class="article-content" style="font-size:1.05rem;line-height:2.2;">
+                <?php
+                // Remove the first H2 (title, already shown in page-header)
+                $body = preg_replace('/<!-- wp:heading -->\s*<h2[^>]*>.*?<\/h2>\s*<!-- \/wp:heading -->/s', '', $article_content, 1);
+                // Convert WordPress Gutenberg blocks to plain HTML
+                $body = preg_replace('/<!-- wp:heading \{"level":3\} -->\s*<h3>/', '<h3>', $body);
+                $body = preg_replace('/<\/h3>\s*<!-- \/wp:heading -->/', '</h3>', $body);
+                $body = preg_replace('/<!-- wp:paragraph -->\s*/', '', $body);
+                $body = preg_replace('/\s*<!-- \/wp:paragraph -->/', '', $body);
+                echo $body;
+                ?>
+            </div>
+            <div class="doctor-note" style="background:var(--bg-warm);padding:24px;border-radius:var(--radius);margin:32px 0;border-left:4px solid var(--primary);">
+                <h4 style="color:var(--primary);">👨‍⚕️ 翁医生提示</h4>
+                <p style="color:var(--text-gray);margin:0;">本文仅供健康科普参考，不能替代专业医疗诊断。如有ED相关症状，建议到正规医疗机构就诊，由专业医生评估后制定个性化治疗方案。</p>
+            </div>
+            <div style="text-align:center;padding:32px;background:linear-gradient(135deg,var(--bg-warm),#F5E6D3);border-radius:var(--radius);">
+                <h4>读完文章还有疑问？</h4>
+                <p style="color:var(--text-gray);">翁青山博士为您提供一对一私密咨询</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">预约免费咨询</a>
+            </div>
+        </article>
+        <div style="text-align:center;margin-top:24px;">
+            <a href="<?php echo home_url('/disease-science'); ?>" class="btn btn-outline">← 返回科普列表</a>
+        </div>
+    </div>
+</section>
+<?php else: ?>
+<!-- ===== 科普列表视图 ===== -->
 <section class="page-header">
     <div class="container">
         <h1>疾病科普</h1>
-        <p class="page-desc">了解勃起功能障碍，科学认识，正确治疗</p>
+        <p class="page-desc">13篇系列文章 · 基于100篇权威文献汇编 · 翁青山博士审核</p>
     </div>
 </section>
 
+<!-- 专栏介绍 -->
 <section class="section section-white">
-    <div class="container">
-        <!-- 快速科普板块 -->
-        <div class="card-grid" style="margin-bottom:60px;">
-            <div class="card">
-                <div class="card-icon">📋</div>
-                <h3>什么是勃起功能障碍（ED）？</h3>
-                <p>ED是指男性不能持续获得并维持足够的阴茎勃起以完成满意的性生活。ED是成年男性的常见疾病，中国40岁以上男性发病率达<strong>40.6%</strong>。</p>
-                <a href="#what-is-ed" style="font-weight:600;">了解更多 →</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔍</div>
-                <h3>ED的病因与分类</h3>
-                <p>ED分为器质性（血管性、神经性、内分泌性）、心理性和混合性。最常见的器质性原因是<strong>血管性ED</strong>，占所有ED的70%以上。</p>
-                <a href="#ed-causes" style="font-weight:600;">了解更多 →</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">❤️</div>
-                <h3>ED与心血管疾病的关系</h3>
-                <p>ED被认为是<strong>心血管疾病的"前哨"信号</strong>。冠状动脉疾病患者ED发病率高达75%，ED通常比心血管事件早出现2-5年。</p>
-                <a href="#ed-heart" style="font-weight:600;">了解更多 →</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">💊</div>
-                <h3>糖尿病与ED</h3>
-                <p>糖尿病性ED发病率高达<strong>75%</strong>，比非糖尿病患者高3倍。高血糖损害小血管和神经，是导致ED的重要危险因素。</p>
-                <a href="#ed-diabetes" style="font-weight:600;">了解更多 →</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🛡️</div>
-                <h3>男性性功能保养指南</h3>
-                <p>40岁后男性勃起功能自然衰退。通过健康生活方式、定期检查、早期干预，可以有效维持和改善性功能。</p>
-                <a href="#maintenance" style="font-weight:600;">了解更多 →</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🏥</div>
-                <h3>ED的治疗方案选择</h3>
-                <p>从口服药物到冲击波治疗，从注射到假体。了解各种治疗方案的优劣，选择最适合自己的方式。</p>
-                <a href="/treatment" style="font-weight:600;">了解更多 →</a>
-            </div>
+    <div class="container" style="max-width:900px;">
+
+        <div style="background:linear-gradient(135deg,var(--bg-warm),#FFF8EE);padding:40px;border-radius:var(--radius);margin-bottom:48px;border:2px solid var(--border-warm);text-align:center;">
+            <p style="font-size:1.2rem;color:var(--primary);font-family:var(--font-heading);margin-bottom:16px;">📚 全面了解勃起功能障碍（ED）</p>
+            <p style="font-size:1.05rem;color:var(--text-gray);line-height:2;">
+                本专栏汇编了<strong>13篇ED（勃起功能障碍）科普系列文章</strong>，内容涵盖ED的流行病学、病因分类、诊断评估、
+                治疗选择（药物/冲击波/中医/手术）、生活方式干预、就医指导等多个维度。
+                每篇文章约<strong>400-1500字</strong>，语言通俗易懂，旨在帮助读者<strong>科学认识ED、消除误解、正确就医</strong>。
+            </p>
+            <p style="font-size:0.95rem;color:var(--text-light);margin-top:12px;">
+                所有文章由<strong>翁青山博士</strong>审核，参考了100篇来自PubMed、中华男科学杂志、EAU指南等权威来源的医学文献。
+            </p>
         </div>
 
-        <!-- 详细科普内容 -->
-        <div style="max-width:800px;margin:0 auto;">
+        <!-- 文章分类导航 -->
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;justify-content:center;">
+            <span style="background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:0.85rem;font-weight:600;">📋 全部 (13篇)</span>
+            <span style="background:var(--bg-warm);color:var(--primary);padding:6px 16px;border-radius:50px;font-size:0.85rem;font-weight:600;">🔬 疾病基础</span>
+            <span style="background:var(--bg-warm);color:var(--primary);padding:6px 16px;border-radius:50px;font-size:0.85rem;font-weight:600;">💊 治疗方案</span>
+            <span style="background:var(--bg-warm);color:var(--primary);padding:6px 16px;border-radius:50px;font-size:0.85rem;font-weight:600;">🏃 生活方式</span>
+            <span style="background:var(--bg-warm);color:var(--primary);padding:6px 16px;border-radius:50px;font-size:0.85rem;font-weight:600;">🌿 中医视角</span>
+            <span style="background:var(--bg-warm);color:var(--primary);padding:6px 16px;border-radius:50px;font-size:0.85rem;font-weight:600;">🏥 就医指南</span>
+        </div>
 
-            <!-- 什么是ED -->
-            <div id="what-is-ed" style="margin-bottom:60px;">
-                <h2 style="border-left:4px solid var(--primary);padding-left:16px;margin-bottom:20px;">什么是勃起功能障碍（ED）？</h2>
-                <div style="background:var(--bg-white);padding:32px;border-radius:var(--radius);box-shadow:var(--shadow-card);">
-                    <p style="font-size:1.05rem;line-height:2;color:var(--text-dark);margin-bottom:16px;">
-                        勃起功能障碍（Erectile Dysfunction，ED）指男性<strong>不能持续获得并维持足够的阴茎勃起以完成满意的性生活</strong>（中华医学会男科学分会指南，2022）。这是一个非常普遍的男性健康问题。
-                    </p>
-                    <h4>流行病学数据</h4>
-                    <ul style="line-height:2;color:var(--text-gray);margin-bottom:16px;">
-                        <li>中国40岁以上男性ED发病率：<strong>40.6%</strong>（Zhang X, et al. J Sex Med, 2017）</li>
-                        <li>40-70岁男性：轻度17.2%、中度25.2%、重度9.6%，<strong>轻中度占比81%</strong></li>
-                        <li>预计中国ED患者数以亿计，且随年龄增长显著增加</li>
-                    </ul>
-                    <h4>ED的严重程度评估（IIEF-EF评分）</h4>
-                    <table style="width:100%;border-collapse:collapse;text-align:center;margin-top:12px;">
-                        <tr style="border:1px solid var(--border-warm);"><td style="padding:8px;">22-25分</td><td style="padding:8px;">无ED</td></tr>
-                        <tr style="border:1px solid var(--border-warm);"><td style="padding:8px;">17-21分</td><td style="padding:8px;">轻度ED</td></tr>
-                        <tr style="border:1px solid var(--border-warm);"><td style="padding:8px;">12-16分</td><td style="padding:8px;">轻中度ED</td></tr>
-                        <tr style="border:1px solid var(--border-warm);"><td style="padding:8px;">8-11分</td><td style="padding:8px;">中度ED</td></tr>
-                        <tr style="border:1px solid var(--border-warm);"><td style="padding:8px;">≤7分</td><td style="padding:8px;">重度ED</td></tr>
-                    </table>
-                    <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;">轻中度ED（7-21分）是Renova冲击波治疗的最佳适应人群。</p>
+        <!-- 文章列表 -->
+        <div style="display:grid;gap:24px;">
+            <?php
+            // 13篇文章内联数据（零依赖，不依赖WordPress文章导入）
+            $all_articles = array(
+                array('num' => '01', 'cat' => '💊 治疗方案', 'title' => '冲击波治疗ED效果怎么样？——Renova临床数据全解析', 'desc' => 'Reisman(2015)58例、Bechara(2016)50例、Clavijo Meta分析——轻中度有效率90%+。', 'slug' => 'chongjibo-ED-xiaoguo'),
+                array('num' => '02', 'cat' => '💊 治疗方案', 'title' => 'ED不吃药能治好吗？——从药物依赖到根源修复', 'desc' => '冲击波通过促进血管新生从根源改善勃起功能，与药物"治标"的本质区别。', 'slug' => 'ED-bu-chiyao'),
+                array('num' => '03', 'cat' => '💊 治疗方案', 'title' => '吃了伟哥没效果了怎么办？——PDE5i无效ED患者的新选择', 'desc' => '冲击波治疗不依赖NO通路，对PDE5i无效者有效率60%+、持续12个月+。', 'slug' => 'PDE5i-wuxiao'),
+                array('num' => '04', 'cat' => '🏃 生活方式', 'title' => '男性功能衰退怎么办？——40岁后男性性功能保养指南', 'desc' => '运动、饮食、体重管理、戒烟限酒、睡眠——科学保养延缓功能衰退。', 'slug' => 'nanxing-baoyang'),
+                array('num' => '05', 'cat' => '🔬 疾病基础', 'title' => '血管性ED能治愈吗？——从病因到治疗的全面解读', 'desc' => '70%的ED属血管性。冲击波通过促进血管新生，从病理基础修复勃起功能。', 'slug' => 'xueguanxing-ED'),
+                array('num' => '06', 'cat' => '💊 治疗方案', 'title' => '糖尿病导致ED怎么办？——糖尿病性ED治疗新途径', 'desc' => '糖尿病ED发病率达75%。冲击波可改善微循环，为糖尿病ED提供新希望。', 'slug' => 'tangniaobing-ED'),
+                array('num' => '07', 'cat' => '🔬 疾病基础', 'title' => 'ED是心血管疾病的"报警信号"', 'desc' => '阴茎血管比冠状动脉细，ED通常比冠心病早2-5年出现——是心脏在求救。', 'slug' => 'ED-xinxueguan'),
+                array('num' => '08', 'cat' => '💊 治疗方案', 'title' => 'ED最新治疗方法全解析：从药物到冲击波', 'desc' => 'PDE5i口服药、冲击波、注射、假体、中医——所有方案的适应症和优劣。', 'slug' => 'ED-zhiliao-zonglan'),
+                array('num' => '09', 'cat' => '📋 诊断自评', 'title' => '硬度不够？科学自测你的ED严重程度', 'desc' => 'EHS硬度分级 + IIEF-EF自测量表 + 晨勃预警信号——早发现早干预。', 'slug' => 'ED-symptom-selfcheck'),
+                array('num' => '10', 'cat' => '🔬 疾病基础', 'title' => 'ED不只是"肾虚"：年轻人阳痿的五大真凶', 'desc' => '压力焦虑、熬夜、久坐、色情成瘾、烟酒——不只是"肾虚"那么简单。', 'slug' => 'young-men-ED-causes'),
+                array('num' => '11', 'cat' => '🏃 生活方式', 'title' => '变硬靠自己：运动与饮食改善勃起功能的科学方案', 'desc' => '有氧运动+凯格尔盆底肌训练+地中海饮食——最天然免费的"伟哥"。', 'slug' => 'lifestyle-improve-ED'),
+                array('num' => '12', 'cat' => '🏥 就医指南', 'title' => '长沙看ED去哪家医院？一份实用的避坑指南', 'desc' => '查资质、看设备、识陷阱（包治/过度检查/模糊收费）、重隐私——五步选对。', 'slug' => 'how-to-choose-ED-clinic'),
+                array('num' => '13', 'cat' => '🌿 中医视角', 'title' => '肾阴虚还是肾阳虚？中医治ED先辨对证，别乱吃补药', 'desc' => '肝郁、湿热、血瘀、阴虚、阳虚——五种证型辨证，盲目补肾越补越糟。', 'slug' => 'TCM-ED-syndrome-differentiation'),
+            );
+            foreach ($all_articles as $aidx => $a):
+                $anchor_num = $aidx + 1; ?>
+                <div style="background:var(--bg-white);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow-card);border-left:4px solid var(--primary);display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:center;">
+                    <div style="width:56px;height:56px;background:var(--bg-warm);border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:var(--primary);"><?php echo $a['num']; ?></div>
+                    <div>
+                        <div style="margin-bottom:6px;">
+                            <span style="background:var(--bg-warm);color:var(--primary);padding:2px 10px;border-radius:20px;font-size:0.75rem;"><?php echo $a['cat']; ?></span>
+                        </div>
+                        <h3 style="margin-bottom:6px;font-size:1.1rem;">
+                            <a href="<?php echo home_url('/disease-science/?article=' . $a['slug']); ?>" style="color:var(--text-dark);text-decoration:none;"><?php echo esc_html($a['title']); ?></a>
+                        </h3>
+                        <p style="color:var(--text-gray);font-size:0.9rem;margin-bottom:4px;"><?php echo esc_html($a['desc']); ?></p>
+                        <small style="color:var(--text-light);">👨‍⚕️ 审核：翁青山博士 · ⏱ 阅读约3-5分钟</small>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
+        </div>
 
-            <!-- ED病因 -->
-            <div id="ed-causes" style="margin-bottom:60px;">
-                <h2 style="border-left:4px solid var(--primary);padding-left:16px;margin-bottom:20px;">ED的病因与分类</h2>
-                <div style="background:var(--bg-white);padding:32px;border-radius:var(--radius);box-shadow:var(--shadow-card);">
-                    <p style="font-size:1.05rem;line-height:2;color:var(--text-dark);margin-bottom:16px;">
-                        ED根据病因分为三大类：<strong>器质性、心理性和混合性</strong>。其中器质性原因最常见的是血管性ED。
-                    </p>
-                    <h4>1. 血管性ED（约占70%）</h4>
-                    <p style="color:var(--text-gray);line-height:2;">包括动脉性ED（动脉粥样硬化导致阴茎供血不足）和静脉性ED（静脉漏导致血液无法截留）。这是冲击波治疗的主要目标人群，因为冲击波促进血管新生，直接针对病因。</p>
-                    <h4>2. 神经性ED</h4>
-                    <p style="color:var(--text-gray);line-height:2;">由糖尿病神经病变、脊柱损伤、盆腔手术等导致神经信号传导受损。</p>
-                    <h4>3. 内分泌性ED</h4>
-                    <p style="color:var(--text-gray);line-height:2;">睾酮水平低下、甲状腺功能异常等导致。需要内分泌检查鉴别。</p>
-                    <h4>4. 心理性ED</h4>
-                    <p style="color:var(--text-gray);line-height:2;">焦虑、抑郁、关系问题等心理因素导致。通常起病突然，晨勃正常。</p>
-                    <h4>5. 混合性ED</h4>
-                    <p style="color:var(--text-gray);line-height:2;">大部分患者实际上是混合性ED——既有器质性基础，又有心理因素的叠加影响。</p>
-                </div>
-            </div>
-
-            <!-- 最新文章（WordPress Loop） -->
-            <div style="margin-bottom:60px;">
-                <h2 style="border-left:4px solid var(--primary);padding-left:16px;margin-bottom:24px;">最新科普文章</h2>
-                <div class="card-grid">
-                    <?php
-                    $science_posts = new WP_Query(array(
-                        'category_name' => 'disease-science',
-                        'posts_per_page' => 6,
-                    ));
-                    if ($science_posts->have_posts()):
-                        while ($science_posts->have_posts()): $science_posts->the_post(); ?>
-                            <div class="card">
-                                <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                <p style="color:var(--text-gray);font-size:0.9rem;"><?php echo get_the_excerpt(); ?></p>
-                                <small style="color:var(--text-light);"><?php echo get_the_date(); ?></small>
-                            </div>
-                        <?php endwhile;
-                        wp_reset_postdata();
-                    else: ?>
-                        <p style="color:var(--text-gray);">科普文章持续更新中，敬请期待…</p>
-                    <?php endif; ?>
-                </div>
-            </div>
+        <!-- 底部CTA -->
+        <div style="text-align:center;background:linear-gradient(135deg,var(--bg-warm),#F5E6D3);padding:40px;border-radius:var(--radius);margin-top:48px;">
+            <h3 style="margin-bottom:12px;">📚 读完文章还有疑问？</h3>
+            <p style="color:var(--text-gray);margin-bottom:20px;">翁青山博士为您提供一对一私密咨询<br>免费初诊评估，明确ED类型后制定个性化方案</p>
+            <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">预约免费咨询</a>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>

@@ -46,7 +46,7 @@ renova_breadcrumb();
                 <!-- 文章底部CTA -->
                 <div style="text-align:center;padding:32px;background:linear-gradient(135deg,var(--bg-warm),#F5E6D3);border-radius:var(--radius);margin-bottom:32px;">
                     <h4>您是否正在面临类似困扰？</h4>
-                    <p style="color:var(--text-gray);">真颜堂中医诊所提供专业ED评估与Renova冲击波治疗<br>私密就诊环境，严格保护隐私</p>
+                    <p style="color:var(--text-gray);">星沙华夏医院提供专业ED评估与Renova冲击波治疗<br>私密就诊环境，严格保护隐私</p>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">立即预约咨询</a>
                 </div>
 
@@ -54,31 +54,7 @@ renova_breadcrumb();
             </article>
 
             <aside class="sidebar">
-                <div class="sidebar-widget">
-                    <h4>疾病科普分类</h4>
-                    <ul class="sidebar-nav">
-                        <?php
-                        $categories = get_categories(array('hide_empty' => true));
-                        foreach ($categories as $cat) {
-                            echo '<li><a href="' . get_category_link($cat->term_id) . '">' . $cat->name . ' (' . $cat->count . ')</a></li>';
-                        }
-                        ?>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget">
-                    <h4>近期文章</h4>
-                    <ul class="sidebar-nav">
-                        <?php
-                        $recent_posts = wp_get_recent_posts(array('numberposts' => 5));
-                        foreach ($recent_posts as $post) {
-                            echo '<li><a href="' . get_permalink($post['ID']) . '">' . $post['post_title'] . '</a></li>';
-                        }
-                        ?>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget" style="text-align:center;">
+<div class="sidebar-widget" style="text-align:center;">
                     <h4>预约咨询</h4>
                     <p style="font-size:0.9rem;color:var(--text-gray);">专业评估，私密就诊</p>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary" style="width:100%;">预约免费咨询</a>
