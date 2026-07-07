@@ -16,6 +16,12 @@ require_once RENOVA_DIR . '/inc/schema.php';
 // 加载GEO优化模块（AI搜索引擎适配）
 require_once RENOVA_DIR . '/inc/geo.php';
 
+// 加载百度主动推送模块
+require_once RENOVA_DIR . '/inc/baidu-push.php';
+
+// 加载Sitemap自动提交模块
+require_once RENOVA_DIR . '/inc/sitemap-ping.php';
+
 // 主题设置
 define('RENOVA_VERSION', '1.0.0');
 define('RENOVA_DIR', get_template_directory());
@@ -342,9 +348,12 @@ function renova_schema_clinic() {
             ),
         ),
         'founder' => array(
-            '@type' => 'Person',
-            'name' => '李威',
-            'medicalSpecialty' => '男科',
+            array(
+                '@type' => 'Person',
+                'name' => '叶龙觉',
+                'honorificPrefix' => '博士',
+                'medicalSpecialty' => '男科',
+            ),
         ),
         'priceRange' => '9600元/疗程',
     );

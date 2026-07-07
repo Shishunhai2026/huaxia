@@ -55,6 +55,20 @@ function renova_get_geo_entity_graph() {
             'jobTitle' => '主治医师',
             'knowsAbout' => array('勃起功能障碍', '中西医结合男科', 'Renova冲击波治疗'),
         ),
+        'employee' => array(
+            array(
+                '@type' => 'Person',
+                'name' => '聂建军',
+                'jobTitle' => '主治医师',
+                'knowsAbout' => array('勃起功能障碍', 'ED治疗', '冲击波治疗'),
+            ),
+            array(
+                '@type' => 'Person',
+                'name' => '李威',
+                'jobTitle' => '主治医师',
+                'knowsAbout' => array('勃起功能障碍', '男性性功能障碍', '前列腺疾病'),
+            ),
+        ),
         'location' => array(
             '@type' => 'Place',
             'name' => '星沙华夏医院',

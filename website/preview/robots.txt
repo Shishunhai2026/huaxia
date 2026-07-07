@@ -1,0 +1,46 @@
+﻿# 星沙华夏医院 - robots.txt
+# SEO优化版本 — 基于200+关键词调研报告
+# 最后更新：2026-07-01
+
+# 百度蜘蛛
+User-agent: Baiduspider
+Disallow: /wp-admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/renova-clinic/
+Crawl-delay: 1
+
+# Google蜘蛛
+User-agent: Googlebot
+Disallow: /wp-admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+
+# 搜狗蜘蛛
+User-agent: Sogou web spider
+Disallow: /wp-admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+Crawl-delay: 1
+
+# 360蜘蛛
+User-agent: 360Spider
+Disallow: /wp-admin/
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+Crawl-delay: 1
+
+# 默认规则
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-content/plugins/
+Disallow: /wp-includes/
+Allow: /wp-content/uploads/
+
+# Sitemap
+Sitemap: https://www.csrenova.com/sitemap.xml

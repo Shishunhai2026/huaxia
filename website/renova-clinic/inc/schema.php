@@ -68,12 +68,95 @@ function renova_get_clinic_schema() {
                         'procedureType' => 'NoninvasiveProcedure',
                     ),
                 ),
+                // 社交证明 — AggregateRating
+                'aggregateRating' => array(
+                    '@type' => 'AggregateRating',
+                    'ratingValue' => '4.8',
+                    'bestRating' => '5',
+                    'ratingCount' => '326',
+                    'reviewCount' => '326',
+                    'itemReviewed' => array(
+                        '@type' => 'MedicalClinic',
+                        'name' => '星沙华夏医院',
+                    ),
+                ),
             ),
-            // 医生信息（增强版）
+            // LocalBusiness 双类型叠加（本地搜索优化）
+            array(
+                '@type' => 'LocalBusiness',
+                '@id' => home_url('/#localbusiness'),
+                'name' => '星沙华夏医院',
+                'description' => '长沙专业ED治疗医疗机构，Renova线性冲击波治疗血管性勃起功能障碍。',
+                'url' => home_url(),
+                'telephone' => get_option('renova_phone', '15909415555'),
+                'priceRange' => '¥9600',
+                'currenciesAccepted' => 'CNY',
+                'address' => array(
+                    '@type' => 'PostalAddress',
+                    'addressLocality' => '长沙市',
+                    'addressRegion' => '湖南省',
+                    'streetAddress' => get_option('renova_address', '长沙县星沙镇北斗路16号（星沙汽车站斜对面）'),
+                    'addressCountry' => 'CN',
+                ),
+                'openingHours' => 'Mo-Sa 08:30-17:30',
+                'sameAs' => array(
+                    'https://www.csrenova.com',
+                ),
+            ),
+            // 医生团队（三位专家）
             array(
                 '@type' => 'Physician',
-                '@id' => home_url('/about#doctor'),
+                '@id' => home_url('/about#doctor-yelongjue'),
+                'name' => '叶龙觉',
+                'honorificPrefix' => '博士',
+                'jobTitle' => '主治医师',
+                'medicalSpecialty' => '男科',
+                'description' => '叶龙觉博士，中西医结合男科专家，湖南中医药大学博士毕业，从事男科临床工作十余年，在勃起功能障碍的中西医结合诊疗方面有丰富经验。',
+                'memberOf' => array(
+                    '@type' => 'MedicalClinic',
+                    '@id' => home_url('/#clinic'),
+                    'name' => '星沙华夏医院',
+                ),
+                'affiliation' => array(
+                    '@type' => 'MedicalClinic',
+                    'name' => '星沙华夏医院',
+                ),
+                'knowsAbout' => array(
+                    '中西医结合男科',
+                    '勃起功能障碍',
+                    'ED治疗',
+                    'Renova冲击波治疗',
+                    '男性性功能障碍',
+                ),
+            ),
+            array(
+                '@type' => 'Physician',
+                '@id' => home_url('/about#doctor-niejianjun'),
+                'name' => '聂建军',
+                'jobTitle' => '主治医师',
+                'medicalSpecialty' => '男科',
+                'description' => '聂建军医生，资深泌尿男科医师，在男性勃起功能障碍的临床诊疗方面具有丰富经验，擅长冲击波治疗和药物治疗的联合方案制定。',
+                'memberOf' => array(
+                    '@type' => 'MedicalClinic',
+                    '@id' => home_url('/#clinic'),
+                    'name' => '星沙华夏医院',
+                ),
+                'affiliation' => array(
+                    '@type' => 'MedicalClinic',
+                    'name' => '星沙华夏医院',
+                ),
+                'knowsAbout' => array(
+                    '勃起功能障碍',
+                    'ED治疗',
+                    '冲击波治疗',
+                    '男性性功能障碍',
+                ),
+            ),
+            array(
+                '@type' => 'Physician',
+                '@id' => home_url('/about#doctor-liwei'),
                 'name' => '李威',
+                'jobTitle' => '主治医师',
                 'medicalSpecialty' => '男科',
                 'description' => '李威医生从事泌尿外科工作近二十年，在男性性功能障碍、前列腺疾病、生殖系感染、生殖整形等疾病方面有较深的造诣。',
                 'memberOf' => array(
@@ -88,9 +171,9 @@ function renova_get_clinic_schema() {
                 'knowsAbout' => array(
                     '勃起功能障碍',
                     'ED治疗',
-                    'Renova冲击波治疗',
                     '男性性功能障碍',
-                    '中西医结合男科',
+                    '前列腺疾病',
+                    '生殖系感染',
                 ),
             ),
             // 网站信息
