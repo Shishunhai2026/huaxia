@@ -23,7 +23,7 @@ get_header();
                     国内外权威指南推荐的ED一线治疗方案
                 </p>
                 <p style="font-size:1rem;color:var(--text-gray);margin-bottom:20px;line-height:1.6;">
-                    长沙县星沙镇北斗路16号（星沙汽车站斜对面）· 翁青山博士坐诊<br>
+                    长沙县星沙镇北斗路16号（星沙汽车站斜对面）· 叶龙觉博士坐诊<br>
                     针对硬度不够、晨勃消失、中途疲软、PDE5i无效等ED问题提供专业诊疗
                 </p>
                 <div class="hero-features">
@@ -114,7 +114,7 @@ get_header();
             <div class="card">
                 <div class="card-icon">🩺</div>
                 <h3>10年+临床经验</h3>
-                <p>翁医生从事中西医结合临床工作10余年，丰富的男科诊疗经验，为您制定个性化治疗方案。</p>
+                <p>叶医生从事中西医结合临床工作10余年，丰富的男科诊疗经验，为您制定个性化治疗方案。</p>
             </div>
         </div>
     </div>
@@ -217,7 +217,7 @@ get_header();
         </div>
         <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
             <div class="testimonial-card">
-                <p class="quote">"我是从网上了解到冲击波治疗的，得了ED两年，吃了不少药效果不稳定。在翁医生这里做了4次治疗后，改善非常明显，现在已经能和妻子正常同房了。真的感谢翁医生。"</p>
+                <p class="quote">"我是从网上了解到冲击波治疗的，得了ED两年，吃了不少药效果不稳定。在叶医生这里做了4次治疗后，改善非常明显，现在已经能和妻子正常同房了。真的感谢叶医生。"</p>
                 <p class="author">— 长沙市 · 42岁 · 血管性ED · 治疗时间：2024年</p>
             </div>
             <div class="testimonial-card">

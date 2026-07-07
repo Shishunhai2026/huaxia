@@ -1,4 +1,4 @@
-# 刘建军中西医诊所 — 网站部署与运营手册
+﻿# 刘建军中西医诊所 — 网站部署与运营手册
 
 ## 📋 目录
 
@@ -70,7 +70,7 @@ yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_
 
 **Step 1：下载WordPress**
 ```bash
-cd /www/wwwroot/YOUR_DOMAIN/
+cd /www/wwwroot/www.csrenova.com/
 wget https://cn.wordpress.org/latest-zh_CN.zip
 unzip latest-zh_CN.zip
 mv wordpress/* ./
@@ -78,7 +78,7 @@ rm -rf wordpress latest-zh_CN.zip
 ```
 
 **Step 2：配置wp-config.php**
-1. 访问 http://YOUR_DOMAIN/
+1. 访问 http://www.csrenova.com/
 2. 按提示填入数据库信息
 3. 设置站点标题：**刘建军中西医诊所**
 4. 设置管理员账号密码（务必记录）
@@ -185,11 +185,11 @@ rm -rf wordpress latest-zh_CN.zip
 ### 6.2 上传Sitemap和Robots
 
 将以下文件上传到网站根目录：
-- `sitemap.xml` → `/www/wwwroot/YOUR_DOMAIN/sitemap.xml`
-- `robots.txt` → `/www/wwwroot/YOUR_DOMAIN/robots.txt`
-- `.htaccess` → `/www/wwwroot/YOUR_DOMAIN/.htaccess`（如果是Apache）
+- `sitemap.xml` → `/www/wwwroot/www.csrenova.com/sitemap.xml`
+- `robots.txt` → `/www/wwwroot/www.csrenova.com/robots.txt`
+- `.htaccess` → `/www/wwwroot/www.csrenova.com/.htaccess`（如果是Apache）
 
-**重要：替换文件中的 YOUR_DOMAIN 为实际域名**
+**重要：替换文件中的 www.csrenova.com 为实际域名**
 
 ### 6.3 每页SEO检查清单
 

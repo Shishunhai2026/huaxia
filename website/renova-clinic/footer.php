@@ -22,7 +22,7 @@
                 <div class="footer-col">
                     <h4>关于我们</h4>
                     <a href="<?php echo home_url('/about'); ?>">诊所简介</a>
-                    <a href="<?php echo home_url('/about#doctor'); ?>">翁医生简介</a>
+                    <a href="<?php echo home_url('/about#doctor'); ?>">叶医生简介</a>
                     <a href="<?php echo home_url('/clinical-evidence'); ?>">临床证据</a>
                     <a href="<?php echo home_url('/patient-cases'); ?>">治疗案例</a>
                 </div>

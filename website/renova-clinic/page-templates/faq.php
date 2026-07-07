@@ -242,7 +242,7 @@ renova_breadcrumb();
                     18. 长沙治疗阳痿哪家医院最好？
                 </div>
                 <div class="faq-answer">
-                    <p>选择阳痿治疗机构应关注：<strong>①正规资质</strong>——持有医疗机构执业许可证 <strong>②专业设备</strong>——是否有NMPA认证的冲击波治疗仪 <strong>③医生经验</strong>——医生是否有丰富的男科诊疗经验 <strong>④透明收费</strong>——费用是否公开透明。星沙华夏医院符合以上标准，翁青山博士亲自坐诊，引进以色列Renova原装设备（国械注进20173095171）。建议先预约面诊评估后再决定。</p>
+                    <p>选择阳痿治疗机构应关注：<strong>①正规资质</strong>——持有医疗机构执业许可证 <strong>②专业设备</strong>——是否有NMPA认证的冲击波治疗仪 <strong>③医生经验</strong>——医生是否有丰富的男科诊疗经验 <strong>④透明收费</strong>——费用是否公开透明。星沙华夏医院符合以上标准，叶龙觉博士亲自坐诊，引进以色列Renova原装设备（国械注进20173095171）。建议先预约面诊评估后再决定。</p>
                 </div>
             </div>
 
@@ -288,7 +288,7 @@ renova_breadcrumb();
 
 <section class="cta-section">
     <div class="container">
-        <h2>还有疑问？直接咨询翁医生</h2>
+        <h2>还有疑问？直接咨询叶医生</h2>
         <p>一对一私密咨询，为您全面解答</p>
         <a href="/contact" class="btn btn-primary btn-large">立即咨询</a>
     </div>

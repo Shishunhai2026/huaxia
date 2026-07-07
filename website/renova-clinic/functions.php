@@ -115,7 +115,7 @@ function renova_get_page_keywords() {
         // 机构词（Table 3）
         '长沙男科医院','长沙泌尿外科医院','长沙男性专科','长沙治疗阳痿',
         // 诊所品牌词
-        '星沙华夏医院','翁青山博士','Renova冲击波',
+        '星沙华夏医院','叶龙觉博士','Renova冲击波',
     );
 
     // 页面专属关键词（基于报告Table 9-20意图分类）
@@ -181,7 +181,7 @@ function renova_get_page_keywords() {
         // 关于页：信任验证型（Table 18, 20）
         $page_kw = array(
             '长沙男科专家','长沙看男科最好的医生','长沙中医男科专家',
-            '翁青山','翁青山博士','长沙中医男科',
+            '叶龙觉','叶龙觉博士','长沙中医男科',
             '长沙男科医院靠谱吗','长沙男科哪家不坑人','长沙男科医院好不好',
             '长沙男科医院哪家正规','长沙专业男科医院',
             '湖南中医药大学男科教授','长沙老中医看男科',
@@ -232,15 +232,15 @@ add_action('wp_head', 'renova_meta_keywords', 1);
  */
 function renova_meta_description() {
     if (is_front_page() || is_home()) {
-        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），引进以色列Renova体外线性冲击波治疗仪（国械注进20173095171），翁青山博士坐诊，专业治疗血管性勃起功能障碍（ED）。非侵入、无痛、不吃药不手术，轻中度ED有效率90%以上。一个疗程9600元（4次），长沙地区私密就诊环境。">' . "\n";
+        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），引进以色列Renova体外线性冲击波治疗仪（国械注进20173095171），叶龙觉博士坐诊，专业治疗血管性勃起功能障碍（ED）。非侵入、无痛、不吃药不手术，轻中度ED有效率90%以上。一个疗程9600元（4次），长沙地区私密就诊环境。">' . "\n";
     } elseif (is_page('treatment')) {
         echo '<meta name="description" content="Renova线性冲击波治疗ED——以色列原装进口设备（国械注进20173095171），通过低能量冲击波促进阴茎海绵体血管新生，从根源治疗血管性ED。非侵入性，轻中度ED有效率90%+，PDE5i无效患者有效率60%+。了解治疗流程、费用、适应症。">' . "\n";
     } elseif (is_page('faq')) {
-        echo '<meta name="description" content="冲击波治疗ED常见问题解答：阳痿能彻底治好吗？治疗需要多少钱？过程痛不痛？效果能维持多久？长沙治疗阳痿哪家医院最好？星沙华夏医院翁青山博士为您专业解答20+个ED治疗常见问题。">' . "\n";
+        echo '<meta name="description" content="冲击波治疗ED常见问题解答：阳痿能彻底治好吗？治疗需要多少钱？过程痛不痛？效果能维持多久？长沙治疗阳痿哪家医院最好？星沙华夏医院叶龙觉博士为您专业解答20+个ED治疗常见问题。">' . "\n";
     } elseif (is_page('disease-science')) {
-        echo '<meta name="description" content="全面了解勃起功能障碍（ED/阳痿）——13篇系列文章覆盖流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。硬度不够是什么原因？晨勃消失怎么恢复？年轻人为什么会阳痿？基于100篇权威医学文献，翁青山博士审核。">' . "\n";
+        echo '<meta name="description" content="全面了解勃起功能障碍（ED/阳痿）——13篇系列文章覆盖流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。硬度不够是什么原因？晨勃消失怎么恢复？年轻人为什么会阳痿？基于100篇权威医学文献，叶龙觉博士审核。">' . "\n";
     } elseif (is_page('about')) {
-        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，10年+临床经验，翁青山博士亲自坐诊，引进以色列Renova线性冲击波治疗仪，专业开展血管性ED冲击波治疗和男性功能保养。一对一私密诊室，严格保护隐私。">' . "\n";
+        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，10年+临床经验，叶龙觉博士亲自坐诊，引进以色列Renova线性冲击波治疗仪，专业开展血管性ED冲击波治疗和男性功能保养。一对一私密诊室，严格保护隐私。">' . "\n";
     } elseif (is_page('contact')) {
         echo '<meta name="description" content="预约星沙华夏医院——长沙专业ED治疗诊所。在线预约、电话预约、微信预约均可。地址：长沙县星沙镇北斗路16号（星沙汽车站斜对面）。周一至周六8:30-17:30，私密就诊环境，免费停车。">' . "\n";
     } elseif (is_page('patient-cases')) {
@@ -298,7 +298,7 @@ function renova_og_tags() {
         }
     } else {
         echo '<meta property="og:title" content="长沙ED治疗 | Renova冲击波治疗阳痿 | 星沙华夏医院">' . "\n";
-        echo '<meta property="og:description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，引进以色列Renova线性冲击波治疗仪（国械注进20173095171），翁青山博士坐诊。专业治疗血管性ED，非侵入、不手术、不吃药，有效率90%+。9600元/疗程。">' . "\n";
+        echo '<meta property="og:description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，引进以色列Renova线性冲击波治疗仪（国械注进20173095171），叶龙觉博士坐诊。专业治疗血管性ED，非侵入、不手术、不吃药，有效率90%+。9600元/疗程。">' . "\n";
         echo '<meta property="og:url" content="' . home_url() . '">' . "\n";
         echo '<meta property="og:image" content="' . RENOVA_URI . '/assets/images/renova-device.jpg">' . "\n";
     }
@@ -316,7 +316,7 @@ function renova_schema_clinic() {
         '@type' => 'MedicalClinic',
         '@id' => home_url('/#clinic'),
         'name' => '星沙华夏医院',
-        'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪。翁青山博士坐诊，长沙县星沙镇北斗路16号（星沙汽车站斜对面）。',
+        'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪。叶龙觉博士坐诊，长沙县星沙镇北斗路16号（星沙汽车站斜对面）。',
         'url' => home_url(),
         'telephone' => '15909415555',
         'address' => array(
@@ -343,8 +343,7 @@ function renova_schema_clinic() {
         ),
         'founder' => array(
             '@type' => 'Person',
-            'name' => '翁青山',
-            'honorificPrefix' => '博士',
+            'name' => '李威',
             'medicalSpecialty' => '男科',
         ),
         'priceRange' => '9600元/疗程',
@@ -365,8 +364,8 @@ function renova_schema_article() {
         'description' => get_the_excerpt(),
         'datePublished' => get_the_date('c'),
         'dateModified' => get_the_modified_date('c'),
-        'author' => array('@type' => 'Person', 'name' => '翁青山'),
-        'reviewedBy' => array('@type' => 'Person', 'name' => '翁青山'),
+        'author' => array('@type' => 'Person', 'name' => '叶龙觉'),
+        'reviewedBy' => array('@type' => 'Person', 'name' => '叶龙觉'),
         'publisher' => array('@type' => 'MedicalClinic', 'name' => '星沙华夏医院'),
         'mainEntityOfPage' => array('@type' => 'WebPage', '@id' => get_permalink()),
     );
@@ -407,7 +406,7 @@ function renova_schema_faq_page() {
         array('q'=>'手淫会不会导致阳痿？','a'=>'适度手淫一般不会导致阳痿。但过度频繁的手淫（如每天多次）可能导致：①暂时性的性疲劳②心理上的焦虑和负罪感③对正常性刺激的敏感度下降。如果已经出现勃起问题，减少手淫频率、增加运动、保证充足睡眠通常有帮助。如果症状持续，建议就医评估。'),
         array('q'=>'阳痿会不会自己好？','a'=>'如果ED是由暂时的因素（疲劳、压力、酒精、情绪波动）引起，在因素解除后可能自行恢复。但如果症状持续超过3个月，或出现晨勃消失，则提示可能存在器质性病变，一般不会自行好转，需要专业的医学评估和治疗。拖延不治可能加重病情。'),
         // 就医类
-        array('q'=>'长沙治疗阳痿哪家医院最好？','a'=>'选择阳痿治疗机构应关注：①正规资质——持有医疗机构执业许可证②专业设备——是否有NMPA认证的冲击波治疗仪③医生经验——医生是否有丰富的男科诊疗经验④透明收费——费用是否公开透明。星沙华夏医院符合以上标准，翁青山博士亲自坐诊，引进以色列Renova原装设备。'),
+        array('q'=>'长沙治疗阳痿哪家医院最好？','a'=>'选择阳痿治疗机构应关注：①正规资质——持有医疗机构执业许可证②专业设备——是否有NMPA认证的冲击波治疗仪③医生经验——医生是否有丰富的男科诊疗经验④透明收费——费用是否公开透明。星沙华夏医院符合以上标准，叶龙觉博士亲自坐诊，引进以色列Renova原装设备。'),
         array('q'=>'看ED需要做什么检查？','a'=>'ED的常规检查包括：①详细问诊和IIEF-EF量表评估（了解ED类型和严重程度）②生殖系统体格检查③血常规、血糖、血脂、性激素（排除内科疾病）④必要时行阴茎彩色多普勒超声（评估血管功能）。检查费用约200-500元。不需要住院，当天完成。'),
         array('q'=>'来你们诊所看ED需要带什么？','a'=>'建议携带：①身份证②既往就诊记录和检查报告（如有）③正在服用的药物清单④如有糖尿病/高血压等慢性病相关的病历或检查结果。就诊前不需要特别准备（如禁食）。为保护隐私，请提前致电预约独立的就诊时间。'),
         // 保养类
@@ -557,7 +556,7 @@ function renova_wp_title($title, $sep) {
     } elseif (is_page('disease-science')) {
         $title = 'ED科普专栏 | 阳痿知识大全 | 硬度不够的原因 | 晨勃消失怎么恢复 | 星沙华夏医院';
     } elseif (is_page('about')) {
-        $title = '关于我们 | 长沙男科专家翁青山博士 | 星沙华夏医院';
+        $title = '关于我们 | 长沙男科专家叶龙觉博士 | 星沙华夏医院';
     } elseif (is_page('contact')) {
         $title = '联系我们 | 长沙男科预约挂号 | 在线咨询 | 星沙华夏医院';
     } elseif (is_page('patient-cases')) {

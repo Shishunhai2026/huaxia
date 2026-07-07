@@ -23,7 +23,7 @@ renova_breadcrumb();
                         if ($categories): ?>
                             <span>📂 <?php the_category('、'); ?></span>
                         <?php endif; ?>
-                        <span>👨‍⚕️ 审核：翁青山博士</span>
+                        <span>👨‍⚕️ 审核：叶龙觉博士</span>
                     </div>
                 </header>
 
@@ -39,7 +39,7 @@ renova_breadcrumb();
 
                 <!-- 文章底部医生提示 -->
                 <div class="doctor-note" style="background:var(--bg-warm);padding:24px;border-radius:var(--radius);margin:32px 0;border-left:4px solid var(--primary);">
-                    <h4 style="color:var(--primary);">👨‍⚕️ 翁医生提示</h4>
+                    <h4 style="color:var(--primary);">👨‍⚕️ 叶医生提示</h4>
                     <p style="color:var(--text-gray);margin:0;">本文仅供健康科普参考，不能替代专业医疗诊断。如有ED相关症状，建议到正规医疗机构就诊，由专业医生评估后制定个性化治疗方案。</p>
                 </div>
 

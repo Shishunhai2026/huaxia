@@ -2,7 +2,7 @@
 /**
  * Template Name: 关于我们
  *
- * 诊所介绍 + 翁医生简介
+ * 诊所介绍 + 叶医生简介
  */
 get_header();
 renova_breadcrumb();
@@ -48,34 +48,72 @@ renova_breadcrumb();
             </div>
         </div>
 
-        <!-- 翁医生介绍 -->
+        <!-- 李威医生介绍 -->
         <div id="doctor" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px;">
             <div style="text-align:center;order:-1;">
-                <!-- 医生照片占位 -->
-                <div style="width:240px;height:240px;background:var(--bg-warm);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-light);margin:0 auto;border:4px solid var(--border-warm);">
-                    <div style="text-align:center;">
-                        <p style="font-size:3rem;">👨‍⚕️</p>
-                        <p>翁医生照片</p>
-                    </div>
-                </div>
+                <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-liwei.png"
+                     alt="李威医生"
+                     style="width:240px;height:auto;border-radius:var(--radius);margin:0 auto;box-shadow:var(--shadow-md);">
             </div>
             <div>
                 <span class="section-label">专家介绍</span>
-                <h2 style="margin-bottom:20px;">翁青山 医生</h2>
+                <h2 style="margin-bottom:20px;">李威 主治医生</h2>
                 <p style="font-size:1.05rem;color:var(--text-gray);line-height:2;margin-bottom:16px;">
-                    翁青山博士从事中西医结合临床工作<strong>10余年</strong>，具有丰富的男科疾病诊疗经验。
-                    擅长运用中西医结合方法诊断和治疗勃起功能障碍（ED），尤其在<strong>Renova线性冲击波ED治疗</strong>
-                    方面积累了丰富的临床经验。
+                    从事泌尿外科工作近二十年，在<strong>男性性功能障碍、前列腺疾病、生殖系感染、生殖整形</strong>
+                    等疾病方面有较深的造诣。
                 </p>
                 <p style="font-size:1.05rem;color:var(--text-gray);line-height:2;margin-bottom:16px;">
-                    翁医生注重循证医学，严格遵循国内外权威指南（EAU、APSSM、中华医学会男科学分会）
-                    制定的诊疗规范。在Renova冲击波治疗中，根据每位患者的具体情况制定
+                    李医生在Renova冲击波治疗中，根据每位患者的具体情况制定
                     <strong>个性化治疗方案</strong>，确保最佳治疗效果。
                 </p>
                 <p style="font-size:1.05rem;color:var(--text-gray);line-height:2;">
-                    对待每一位患者，翁医生始终坚持以<strong>耐心倾听、专业诊断、真诚沟通</strong>
+                    对待每一位患者，李医生始终坚持以<strong>耐心倾听、专业诊断、真诚沟通</strong>
                     为原则，帮助患者克服心理障碍，重建自信。
                 </p>
+            </div>
+        </div>
+
+        <!-- 医疗团队 -->
+        <div id="team" style="margin-bottom:80px;">
+            <div class="section-header" style="text-align:center;margin-bottom:48px;">
+                <span class="section-label">医疗团队</span>
+                <h2 style="margin-bottom:16px;">专业医师团队</h2>
+                <p class="section-desc">三位资深医师，为您提供全方位男性健康诊疗服务</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+                <!-- 叶龙觉 -->
+                <div style="text-align:center;background:var(--bg-cream);border-radius:var(--radius);padding:40px 24px;box-shadow:var(--shadow-sm);">
+                    <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-yelongjue.png"
+                         alt="叶龙觉医生"
+                         style="width:180px;height:auto;border-radius:var(--radius);margin:0 auto 20px;box-shadow:var(--shadow-sm);">
+                    <h3 style="margin-bottom:8px;color:var(--primary);">叶龙觉 院长</h3>
+                    <p style="color:var(--accent);font-size:0.9rem;margin-bottom:12px;">★ 院长 · 外科副主任医师</p>
+                    <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.8;">
+                        长沙华夏医院院长、长沙市中医学会理事。曾任长沙县中医院、长沙县妇幼保健院业务院长。从事外科临床、科研、医院管理等工作近五十年，擅长各类外科微创手术，是享誉长沙县的"外科一把刀"。
+                    </p>
+                </div>
+                <!-- 李威 -->
+                <div style="text-align:center;background:var(--bg-cream);border-radius:var(--radius);padding:40px 24px;box-shadow:var(--shadow-sm);">
+                    <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-liwei.png"
+                         alt="李威医生"
+                         style="width:180px;height:auto;border-radius:var(--radius);margin:0 auto 20px;box-shadow:var(--shadow-sm);">
+                    <h3 style="margin-bottom:8px;color:var(--primary);">李威 医生</h3>
+                    <p style="color:var(--accent);font-size:0.9rem;margin-bottom:12px;">★ 外科主任 · 主治医师</p>
+                    <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.8;">
+                        从事泌尿外科工作近二十年，在男性性功能障碍、前列腺疾病、生殖系感染、生殖整形等疾病方面有较深的造诣。
+                    </p>
+                </div>
+                <!-- 聂建军 -->
+                <div style="text-align:center;background:var(--bg-cream);border-radius:var(--radius);padding:40px 24px;box-shadow:var(--shadow-sm);">
+                    <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-niejianjun.png"
+                         alt="聂建军医生"
+                         style="width:180px;height:auto;border-radius:var(--radius);margin:0 auto 20px;box-shadow:var(--shadow-sm);">
+                    <h3 style="margin-bottom:8px;color:var(--primary);">聂建军 医生</h3>
+                    <p style="color:var(--accent);font-size:0.9rem;margin-bottom:12px;">★ 外科主任 · 主治医师</p>
+                    <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.8;">
+                        从事外科临床工作二十余年，擅长生殖整形、肛肠、疝气等外科疾病的诊治，熟练开展相关外科微创手术。
+                    </p>
+                </div>
             </div>
         </div>
 

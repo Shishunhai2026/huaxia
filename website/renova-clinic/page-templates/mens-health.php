@@ -235,7 +235,7 @@ renova_breadcrumb();
             <h2 style="margin-bottom:16px;">关注男性健康，从现在开始</h2>
             <p style="font-size:1.1rem;color:var(--text-gray);margin-bottom:24px;">
                 无论您是已经出现功能下降还是想主动预防<br>
-                翁青山博士为您提供专业评估和个性化保养方案
+                叶龙觉博士为您提供专业评估和个性化保养方案
             </p>
             <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">预约男性功能评估</a>
         </div>

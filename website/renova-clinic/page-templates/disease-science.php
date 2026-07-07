@@ -3,7 +3,7 @@
  * Template Name: 疾病科普
  *
  * ED科普专栏 — 13篇系列文章的完整列表页
- * 基于100篇权威医学文献汇编，翁青山博士审核
+ * 基于100篇权威医学文献汇编，叶龙觉博士审核
  * 支持 ?article=slug 直接查看单篇文章
  * 目标关键词：ED科普、阳痿知识、勃起功能障碍
  */
@@ -34,7 +34,7 @@ if ($article_slug) {
 <section class="page-header">
     <div class="container">
         <h1><?php echo esc_html(strip_tags($article_title)); ?></h1>
-        <p class="page-desc">ED科普专栏 · 翁青山博士审核 · <a href="<?php echo home_url('/disease-science'); ?>">← 返回科普列表</a></p>
+        <p class="page-desc">ED科普专栏 · 叶龙觉博士审核 · <a href="<?php echo home_url('/disease-science'); ?>">← 返回科普列表</a></p>
     </div>
 </section>
 <section class="section section-white">
@@ -53,12 +53,12 @@ if ($article_slug) {
                 ?>
             </div>
             <div class="doctor-note" style="background:var(--bg-warm);padding:24px;border-radius:var(--radius);margin:32px 0;border-left:4px solid var(--primary);">
-                <h4 style="color:var(--primary);">👨‍⚕️ 翁医生提示</h4>
+                <h4 style="color:var(--primary);">👨‍⚕️ 叶医生提示</h4>
                 <p style="color:var(--text-gray);margin:0;">本文仅供健康科普参考，不能替代专业医疗诊断。如有ED相关症状，建议到正规医疗机构就诊，由专业医生评估后制定个性化治疗方案。</p>
             </div>
             <div style="text-align:center;padding:32px;background:linear-gradient(135deg,var(--bg-warm),#F5E6D3);border-radius:var(--radius);">
                 <h4>读完文章还有疑问？</h4>
-                <p style="color:var(--text-gray);">翁青山博士为您提供一对一私密咨询</p>
+                <p style="color:var(--text-gray);">叶龙觉博士为您提供一对一私密咨询</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">预约免费咨询</a>
             </div>
         </article>
@@ -72,7 +72,7 @@ if ($article_slug) {
 <section class="page-header">
     <div class="container">
         <h1>疾病科普</h1>
-        <p class="page-desc">13篇系列文章 · 基于100篇权威文献汇编 · 翁青山博士审核</p>
+        <p class="page-desc">13篇系列文章 · 基于100篇权威文献汇编 · 叶龙觉博士审核</p>
     </div>
 </section>
 
@@ -88,7 +88,7 @@ if ($article_slug) {
                 每篇文章约<strong>400-1500字</strong>，语言通俗易懂，旨在帮助读者<strong>科学认识ED、消除误解、正确就医</strong>。
             </p>
             <p style="font-size:0.95rem;color:var(--text-light);margin-top:12px;">
-                所有文章由<strong>翁青山博士</strong>审核，参考了100篇来自PubMed、中华男科学杂志、EAU指南等权威来源的医学文献。
+                所有文章由<strong>叶龙觉博士</strong>审核，参考了100篇来自PubMed、中华男科学杂志、EAU指南等权威来源的医学文献。
             </p>
         </div>
 
@@ -133,7 +133,7 @@ if ($article_slug) {
                             <a href="<?php echo home_url('/disease-science/?article=' . $a['slug']); ?>" style="color:var(--text-dark);text-decoration:none;"><?php echo esc_html($a['title']); ?></a>
                         </h3>
                         <p style="color:var(--text-gray);font-size:0.9rem;margin-bottom:4px;"><?php echo esc_html($a['desc']); ?></p>
-                        <small style="color:var(--text-light);">👨‍⚕️ 审核：翁青山博士 · ⏱ 阅读约3-5分钟</small>
+                        <small style="color:var(--text-light);">👨‍⚕️ 审核：叶龙觉博士 · ⏱ 阅读约3-5分钟</small>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -142,7 +142,7 @@ if ($article_slug) {
         <!-- 底部CTA -->
         <div style="text-align:center;background:linear-gradient(135deg,var(--bg-warm),#F5E6D3);padding:40px;border-radius:var(--radius);margin-top:48px;">
             <h3 style="margin-bottom:12px;">📚 读完文章还有疑问？</h3>
-            <p style="color:var(--text-gray);margin-bottom:20px;">翁青山博士为您提供一对一私密咨询<br>免费初诊评估，明确ED类型后制定个性化方案</p>
+            <p style="color:var(--text-gray);margin-bottom:20px;">叶龙觉博士为您提供一对一私密咨询<br>免费初诊评估，明确ED类型后制定个性化方案</p>
             <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">预约免费咨询</a>
         </div>
     </div>

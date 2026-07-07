@@ -1,4 +1,4 @@
-# 星沙华夏医院 - robots.txt
+﻿# 星沙华夏医院 - robots.txt
 # SEO优化版本 — 基于200+关键词调研报告
 # 最后更新：2026-07-01
 
@@ -43,4 +43,4 @@ Disallow: /wp-includes/
 Allow: /wp-content/uploads/
 
 # Sitemap
-Sitemap: https://YOUR_DOMAIN/sitemap.xml
+Sitemap: https://www.csrenova.com/sitemap.xml

@@ -67,7 +67,7 @@ for i, a in enumerate(articles):
                     <span class="article-category {a["cat_class"]}">{a["cat_label"]}</span>
                     <h2 class="article-card-title">{a["title"]}</h2>
                     <div class="article-card-meta">
-                        <span>👨‍⚕️ 审核：翁青山博士</span>
+                        <span>👨‍⚕️ 审核：叶龙觉博士</span>
                         <span>⏱ ~{a["minutes"]}分钟</span>
                         <span>📝 ~{a["chars"]}字</span>
                     </div>

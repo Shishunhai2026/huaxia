@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ED科普专栏 · 13篇系列文章 | 星沙华夏医院</title>
-<meta name="description" content="ED科普专栏——13篇系列文章覆盖勃起功能障碍的流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。基于100篇权威医学文献，翁青山博士审核。">
+<meta name="description" content="ED科普专栏——13篇系列文章覆盖勃起功能障碍的流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。基于100篇权威医学文献，叶龙觉博士审核。">
 <meta name="keywords" content="ED科普,阳痿科普,勃起功能障碍科普,ED知识,阳痿文章,硬度不够,晨勃消失,冲击波治疗,ED治疗">
 <style>
 :root {
@@ -163,7 +163,7 @@ body { font-family:var(--font-body); color:var(--text-dark); background:var(--bg
 <body id="top">
 
 <div class="top-bar">
-  星沙华夏医院 · 翁青山博士审核 · 长沙县星沙镇北斗路16号（星沙汽车站斜对面） · <a href="index.html">← 返回首页</a>
+  星沙华夏医院 · 叶龙觉博士审核 · 长沙县星沙镇北斗路16号（星沙汽车站斜对面） · <a href="index.html">← 返回首页</a>
 </div>
 
 <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
@@ -182,7 +182,7 @@ body { font-family:var(--font-body); color:var(--text-dark); background:var(--bg
   <div class="container">
     <div class="hero-badge">📚 科普专栏</div>
     <h1>勃起功能障碍<span>（ED）</span>科普大全</h1>
-    <p>13篇文章系统覆盖ED的流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。每篇约500字，5分钟读懂一个知识点，所有内容经翁青山博士审核。</p>
+    <p>13篇文章系统覆盖ED的流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。每篇约500字，5分钟读懂一个知识点，所有内容经叶龙觉博士审核。</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num">13</div><div class="label">系列文章</div></div>
       <div class="hero-stat"><div class="num">100+</div><div class="label">参考医学文献</div></div>
@@ -220,7 +220,7 @@ body { font-family:var(--font-body); color:var(--text-dark); background:var(--bg
     <div class="doctor-avatar">👨‍⚕️</div>
     <div class="doctor-info">
       <h3>读完文章还有疑问？</h3>
-      <p>翁青山博士从事男科临床10余年，为您提供一对一私密咨询。免费初诊评估，明确ED类型后制定个性化方案。</p>
+      <p>叶龙觉博士从事男科临床10余年，为您提供一对一私密咨询。免费初诊评估，明确ED类型后制定个性化方案。</p>
     </div>
     <a href="index.html#contact" class="btn">📞 预约免费咨询</a>
   </div>

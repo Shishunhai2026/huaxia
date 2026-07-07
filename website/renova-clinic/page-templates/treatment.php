@@ -246,7 +246,7 @@ renova_breadcrumb();
 <section class="cta-section">
     <div class="container">
         <h2>想了解冲击波治疗是否适合您？</h2>
-        <p>翁医生为您提供一对一私密咨询与专业评估<br>预约免费初诊，了解您的ED类型和治疗方案</p>
+        <p>叶医生为您提供一对一私密咨询与专业评估<br>预约免费初诊，了解您的ED类型和治疗方案</p>
         <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">立即预约咨询</a>
     </div>
 </section>

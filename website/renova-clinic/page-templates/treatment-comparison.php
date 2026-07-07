@@ -245,7 +245,7 @@ renova_breadcrumb();
                         <p>中西医结合是目前ED治疗的<strong>最佳综合策略</strong>之一：<br><br>
                         <strong>西医担当：</strong>精准诊断（明确ED类型和病因）+ 病因治疗（冲击波修复血管、PDE5i改善血流）+ 客观疗效评估（IIEF评分、NPTR监测）。<br><br>
                         <strong>中医担当：</strong>整体调理（改善肾虚、肝郁、湿热等证候）+ 改善伴随症状（腰酸、乏力、失眠）+ 减轻焦虑和药物副作用。<br><br>
-                        星沙华夏医院翁青山博士正是中西医结合方向的专家，在Renova冲击波治疗中整合中医调理方案，实现"治标+治本+调理"三位一体。</p>
+                        星沙华夏医院叶龙觉博士正是中西医结合方向的专家，在Renova冲击波治疗中整合中医调理方案，实现"治标+治本+调理"三位一体。</p>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@ renova_breadcrumb();
             <h2 style="margin-bottom:16px;">不确定哪种方案适合您？</h2>
             <p style="font-size:1.1rem;color:var(--text-gray);margin-bottom:24px;">
                 每个人的ED情况都不同，最准确的选择需要在专业评估后做出<br>
-                翁青山博士为您提供一对一评估，帮您选择最适合的个性化方案
+                叶龙觉博士为您提供一对一评估，帮您选择最适合的个性化方案
             </p>
             <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">预约免费方案评估</a>
         </div>

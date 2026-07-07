@@ -47,7 +47,7 @@
         </nav>
 
         <div class="header-cta">
-            <span class="header-phone">📞 <?php echo get_option('renova_phone', '400-XXX-XXXX'); ?></span>
+            <span class="header-phone">📞 <?php echo get_option('renova_phone', '15909415555'); ?></span>
             <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-small">预约咨询</a>
         </div>
     </div>

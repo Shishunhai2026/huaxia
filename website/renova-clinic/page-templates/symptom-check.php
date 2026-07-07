@@ -207,7 +207,7 @@ renova_breadcrumb();
             <h2 style="margin-bottom:16px;">不确定自己的情况？</h2>
             <p style="font-size:1.1rem;color:var(--text-gray);margin-bottom:24px;">
                 自评只是第一步，准确的诊断需要专业医生的评估。<br>
-                翁青山博士为您提供一对一私密评估，明确ED类型后再制定治疗方案。
+                叶龙觉博士为您提供一对一私密评估，明确ED类型后再制定治疗方案。
             </p>
             <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">预约免费初诊评估</a>
         </div>

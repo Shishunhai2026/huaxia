@@ -21,7 +21,7 @@ function renova_get_clinic_schema() {
                 '@type' => 'MedicalClinic',
                 '@id' => home_url('/#clinic'),
                 'name' => '星沙华夏医院',
-                'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪（国械注进20173095171）。位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），翁青山博士亲自坐诊。非侵入性治疗，轻中度ED有效率90%以上，PDE5i无效患者有效率60%+。',
+                'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪（国械注进20173095171）。位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），叶龙觉博士亲自坐诊。非侵入性治疗，轻中度ED有效率90%以上，PDE5i无效患者有效率60%+。',
                 'url' => home_url(),
                 'telephone' => get_option('renova_phone', '15909415555'),
                 'priceRange' => '9600元/疗程',
@@ -73,10 +73,9 @@ function renova_get_clinic_schema() {
             array(
                 '@type' => 'Physician',
                 '@id' => home_url('/about#doctor'),
-                'name' => '翁青山',
-                'honorificPrefix' => '博士',
+                'name' => '李威',
                 'medicalSpecialty' => '男科',
-                'description' => '翁青山博士从事中西医结合临床工作10余年，具有丰富的男科疾病诊疗经验，擅长运用中西医结合方法诊断和治疗勃起功能障碍（ED），尤其在Renova线性冲击波ED治疗方面积累了丰富的临床经验。',
+                'description' => '李威医生从事泌尿外科工作近二十年，在男性性功能障碍、前列腺疾病、生殖系感染、生殖整形等疾病方面有较深的造诣。',
                 'memberOf' => array(
                     '@type' => 'MedicalClinic',
                     '@id' => home_url('/#clinic'),
@@ -231,11 +230,11 @@ function renova_get_article_schema() {
         'dateModified' => get_the_modified_date('c'),
         'author' => array(
             '@type' => 'Person',
-            'name' => '翁青山',
+            'name' => '叶龙觉',
         ),
         'reviewedBy' => array(
             '@type' => 'Person',
-            'name' => '翁青山',
+            'name' => '叶龙觉',
         ),
         'publisher' => array(
             '@type' => 'MedicalClinic',

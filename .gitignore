@@ -26,3 +26,9 @@ Renova/
 *.docx
 .claude/settings.local.json
 .omc/
+
+# 源文档和素材（已完成页面制作，保留存档即可）
+科普文章/
+医生png/
+医生png.rar
+中科仡江首营资料.pdf
