@@ -23,7 +23,7 @@ renova_breadcrumb();
                         if ($categories): ?>
                             <span>📂 <?php the_category('、'); ?></span>
                         <?php endif; ?>
-                        <span>👨‍⚕️ 审核：叶龙觉博士</span>
+                        <span>👨‍⚕️ 审核：叶龙觉医生</span>
                     </div>
                 </header>
 

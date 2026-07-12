@@ -1,6 +1,6 @@
 {
   "outputDirectory": "website/preview",
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "rewrites": [
     {"source": "/", "destination": "/index.html"},
@@ -15,7 +15,9 @@
     {"source": "/faq", "destination": "/index.html"},
     {"source": "/patient-cases", "destination": "/index.html"},
     {"source": "/contact", "destination": "/index.html"},
+    {"source": "/404", "destination": "/404.html"},
     {"source": "/sitemap.xml", "destination": "/sitemap.xml"},
-    {"source": "/robots.txt", "destination": "/robots.txt"}
+    {"source": "/robots.txt", "destination": "/robots.txt"},
+    {"source": "/baidu_verify_codeva-NhSWZTocno.html", "destination": "/baidu_verify_codeva-NhSWZTocno.html"}
   ]
 }

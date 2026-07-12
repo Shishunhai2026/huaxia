@@ -1,4 +1,4 @@
-    <footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -36,7 +36,7 @@
                 <div class="footer-col">
                     <h4>就诊信息</h4>
                     <p>📍 <?php echo get_option('renova_address', '长沙县星沙镇北斗路16号（星沙汽车站斜对面）'); ?></p>
-                    <p>🕐 周一至周六 8:30-17:30</p>
+                    <p>🕐 周一至周日 8:00-17:30（周末正常接诊）</p>
                     <p>🚇 公共交通可达，私密就诊环境</p>
                     <p>🅿️ 免费停车</p>
                 </div>
@@ -51,5 +51,20 @@
     </footer>
 
     <?php wp_footer(); ?>
+
+    <!-- 百度自动推送 -->
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
 </body>
 </html>

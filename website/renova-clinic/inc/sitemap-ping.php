@@ -13,7 +13,7 @@ function renova_get_sitemap_ping_endpoints() {
     return array(
         'Baidu'    => 'https://www.baidu.com/ping?sitemap=https://www.csrenova.com/sitemap.xml',
         'Google'   => 'https://www.google.com/ping?sitemap=https://www.csrenova.com/sitemap.xml',
-        'Bing'     => 'https://www.bing.com/indexnow?url=https://www.csrenova.com/sitemap.xml&key=www.csrenova.com',
+        'Bing'     => 'https://www.bing.com/webmaster/ping.aspx?siteMap=https://www.csrenova.com/sitemap.xml',
     );
 }
 

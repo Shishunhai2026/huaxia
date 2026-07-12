@@ -21,7 +21,7 @@ function renova_get_clinic_schema() {
                 '@type' => 'MedicalClinic',
                 '@id' => home_url('/#clinic'),
                 'name' => '星沙华夏医院',
-                'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪（国械注进20173095171）。位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），叶龙觉博士亲自坐诊。非侵入性治疗，轻中度ED有效率90%以上，PDE5i无效患者有效率60%+。',
+                'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪（国械注进20173095171）。位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），叶龙觉医生亲自坐诊。非侵入性治疗，轻中度ED有效率90%以上，PDE5i无效患者有效率60%+。',
                 'url' => home_url(),
                 'telephone' => get_option('renova_phone', '15909415555'),
                 'priceRange' => '9600元/疗程',
@@ -32,7 +32,7 @@ function renova_get_clinic_schema() {
                     'streetAddress' => get_option('renova_address', '长沙县星沙镇北斗路16号（星沙汽车站斜对面）'),
                     'addressCountry' => 'CN',
                 ),
-                'openingHours' => 'Mo-Sa 08:30-17:30',
+                'openingHours' => 'Mo-Su 08:00-17:30',
                 'medicalSpecialty' => '男科',
                 'areaServed' => array(
                     array('@type' => 'City', 'name' => '长沙市'),
@@ -68,18 +68,6 @@ function renova_get_clinic_schema() {
                         'procedureType' => 'NoninvasiveProcedure',
                     ),
                 ),
-                // 社交证明 — AggregateRating
-                'aggregateRating' => array(
-                    '@type' => 'AggregateRating',
-                    'ratingValue' => '4.8',
-                    'bestRating' => '5',
-                    'ratingCount' => '326',
-                    'reviewCount' => '326',
-                    'itemReviewed' => array(
-                        '@type' => 'MedicalClinic',
-                        'name' => '星沙华夏医院',
-                    ),
-                ),
             ),
             // LocalBusiness 双类型叠加（本地搜索优化）
             array(
@@ -98,7 +86,7 @@ function renova_get_clinic_schema() {
                     'streetAddress' => get_option('renova_address', '长沙县星沙镇北斗路16号（星沙汽车站斜对面）'),
                     'addressCountry' => 'CN',
                 ),
-                'openingHours' => 'Mo-Sa 08:30-17:30',
+                'openingHours' => 'Mo-Su 08:00-17:30',
                 'sameAs' => array(
                     'https://www.csrenova.com',
                 ),
@@ -111,7 +99,7 @@ function renova_get_clinic_schema() {
                 'honorificPrefix' => '博士',
                 'jobTitle' => '主治医师',
                 'medicalSpecialty' => '男科',
-                'description' => '叶龙觉博士，中西医结合男科专家，湖南中医药大学博士毕业，从事男科临床工作十余年，在勃起功能障碍的中西医结合诊疗方面有丰富经验。',
+                'description' => '叶龙觉医生，中西医结合男科专家，湖南中医药大学博士毕业，从事男科临床工作十余年，在勃起功能障碍的中西医结合诊疗方面有丰富经验。',
                 'memberOf' => array(
                     '@type' => 'MedicalClinic',
                     '@id' => home_url('/#clinic'),

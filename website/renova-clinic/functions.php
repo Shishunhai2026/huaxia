@@ -68,6 +68,25 @@ function renova_theme_setup() {
 add_action('after_setup_theme', 'renova_theme_setup');
 
 /**
+ * URL重写规则 — 为科普专栏文章创建独立URL
+ * /disease-science/{slug}/ → disease-science页面 + article查询参数
+ */
+function renova_query_vars($vars) {
+    $vars[] = 'article';
+    return $vars;
+}
+add_filter('query_vars', 'renova_query_vars');
+
+function renova_rewrite_rules() {
+    add_rewrite_rule(
+        '^disease-science/([a-zA-Z0-9_-]+)/?$',
+        'index.php?pagename=disease-science&article=$matches[1]',
+        'top'
+    );
+}
+add_action('init', 'renova_rewrite_rules');
+
+/**
  * 加载CSS和JS
  */
 function renova_enqueue_assets() {
@@ -97,8 +116,14 @@ add_action('wp_enqueue_scripts', 'renova_enqueue_assets');
  */
 function renova_dns_prefetch() {
     echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">' . "\n";
+    echo '<link rel="dns-prefetch" href="//zz.bdstatic.com">' . "\n";
     echo '<link rel="preconnect" href="//fonts.googleapis.com">' . "\n";
     echo '<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>' . "\n";
+
+    // hreflang: 中文中国
+    $url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    echo '<link rel="alternate" hreflang="zh-CN" href="' . esc_url($url) . '">' . "\n";
+    echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($url) . '">' . "\n";
 }
 add_action('wp_head', 'renova_dns_prefetch', 1);
 
@@ -121,7 +146,7 @@ function renova_get_page_keywords() {
         // 机构词（Table 3）
         '长沙男科医院','长沙泌尿外科医院','长沙男性专科','长沙治疗阳痿',
         // 诊所品牌词
-        '星沙华夏医院','叶龙觉博士','Renova冲击波',
+        '星沙华夏医院','叶龙觉医生','Renova冲击波',
     );
 
     // 页面专属关键词（基于报告Table 9-20意图分类）
@@ -166,9 +191,17 @@ function renova_get_page_keywords() {
             'ED会不会越来越严重','20岁阳痿能自愈吗',
         );
     } elseif (is_page('disease-science')) {
-        // 疾病科普：信息获取型（Table 9-12）+ 科普专栏合并
-        $page_kw = array(
-            'ED科普','阳痿科普','勃起功能障碍科普','ED文章','阳痿知识大全',
+        // 单篇文章视图使用文章专属标签
+        $article = $GLOBALS['renova_article'] ?? null;
+        if ($article && !empty($article['tags'])) {
+            $article_tags = array_map('trim', explode(',', $article['tags']));
+            $page_kw = array_merge($article_tags, array(
+                'ED科普','阳痿科普','勃起功能障碍科普',
+                '星沙华夏医院','叶龙觉医生','长沙ED治疗',
+            ));
+        } else {
+            $page_kw = array(
+                'ED科普','阳痿科普','勃起功能障碍科普','ED文章','阳痿知识大全',
             'ED科普专栏','阳痿科普文章','硬度不够科普','晨勃消失科普',
             '冲击波治疗科普','PDE5i科普','中医治疗阳痿科普','糖尿病ED科普',
             '血管性ED科普','年轻人阳痿科普','男性功能保养科普',
@@ -183,11 +216,12 @@ function renova_get_page_keywords() {
             '如何保持勃起功能','什么年龄开始性功能下降',
             'ED与心血管疾病的关系','糖尿病与ED的关系',
         );
+        }
     } elseif (is_page('about')) {
         // 关于页：信任验证型（Table 18, 20）
         $page_kw = array(
             '长沙男科专家','长沙看男科最好的医生','长沙中医男科专家',
-            '叶龙觉','叶龙觉博士','长沙中医男科',
+            '叶龙觉','叶龙觉医生','长沙中医男科',
             '长沙男科医院靠谱吗','长沙男科哪家不坑人','长沙男科医院好不好',
             '长沙男科医院哪家正规','长沙专业男科医院',
             '湖南中医药大学男科教授','长沙老中医看男科',
@@ -238,15 +272,26 @@ add_action('wp_head', 'renova_meta_keywords', 1);
  */
 function renova_meta_description() {
     if (is_front_page() || is_home()) {
-        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），引进以色列Renova体外线性冲击波治疗仪（国械注进20173095171），叶龙觉博士坐诊，专业治疗血管性勃起功能障碍（ED）。非侵入、无痛、不吃药不手术，轻中度ED有效率90%以上。一个疗程9600元（4次），长沙地区私密就诊环境。">' . "\n";
+        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号（星沙汽车站斜对面），引进以色列Renova体外线性冲击波治疗仪（国械注进20173095171），叶龙觉医生坐诊，专业治疗血管性勃起功能障碍（ED）。非侵入、无痛、不吃药不手术，轻中度ED有效率90%以上。一个疗程9600元（4次），长沙地区私密就诊环境。">' . "\n";
     } elseif (is_page('treatment')) {
         echo '<meta name="description" content="Renova线性冲击波治疗ED——以色列原装进口设备（国械注进20173095171），通过低能量冲击波促进阴茎海绵体血管新生，从根源治疗血管性ED。非侵入性，轻中度ED有效率90%+，PDE5i无效患者有效率60%+。了解治疗流程、费用、适应症。">' . "\n";
     } elseif (is_page('faq')) {
-        echo '<meta name="description" content="冲击波治疗ED常见问题解答：阳痿能彻底治好吗？治疗需要多少钱？过程痛不痛？效果能维持多久？长沙治疗阳痿哪家医院最好？星沙华夏医院叶龙觉博士为您专业解答20+个ED治疗常见问题。">' . "\n";
+        echo '<meta name="description" content="冲击波治疗ED常见问题解答：阳痿能彻底治好吗？治疗需要多少钱？过程痛不痛？效果能维持多久？长沙治疗阳痿哪家医院最好？星沙华夏医院叶龙觉医生为您专业解答20+个ED治疗常见问题。">' . "\n";
     } elseif (is_page('disease-science')) {
-        echo '<meta name="description" content="全面了解勃起功能障碍（ED/阳痿）——13篇系列文章覆盖流行病学、病因、诊断、治疗、生活方式、中医辨证、就医选择。硬度不够是什么原因？晨勃消失怎么恢复？年轻人为什么会阳痿？基于100篇权威医学文献，叶龙觉博士审核。">' . "\n";
+        // 如果是单篇文章视图，使用文章专属描述
+        $article = $GLOBALS['renova_article'] ?? null;
+        if ($article && !empty($article['excerpt'])) {
+            $desc = mb_substr($article['excerpt'], 0, 150);
+            echo '<meta name="description" content="' . esc_attr($desc) . ' | 叶龙觉医生审核 | 星沙华夏医院 - 长沙ED治疗">' . "\n";
+        } else {
+            // 如果是分类筛选页面，添加noindex避免重复内容
+            if (isset($_GET['cat']) && !empty($_GET['cat'])) {
+                echo '<meta name="robots" content="noindex, follow">' . "\n";
+            }
+            echo '<meta name="description" content="全面了解勃起功能障碍（ED/阳痿）——100篇系列文章覆盖症状自查、病因探索、求医指南、治疗方案、费用医保、药物对比、就医隐私、康复预期9大主题。硬度不够是什么原因？晨勃消失怎么恢复？年轻人为什么会阳痿？基于100篇权威医学文献，叶龙觉医生审核。">' . "\n";
+        }
     } elseif (is_page('about')) {
-        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，10年+临床经验，叶龙觉博士亲自坐诊，引进以色列Renova线性冲击波治疗仪，专业开展血管性ED冲击波治疗和男性功能保养。一对一私密诊室，严格保护隐私。">' . "\n";
+        echo '<meta name="description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，10年+临床经验，叶龙觉医生亲自坐诊，引进以色列Renova线性冲击波治疗仪，专业开展血管性ED冲击波治疗和男性功能保养。一对一私密诊室，严格保护隐私。">' . "\n";
     } elseif (is_page('contact')) {
         echo '<meta name="description" content="预约星沙华夏医院——长沙专业ED治疗诊所。在线预约、电话预约、微信预约均可。地址：长沙县星沙镇北斗路16号（星沙汽车站斜对面）。周一至周六8:30-17:30，私密就诊环境，免费停车。">' . "\n";
     } elseif (is_page('patient-cases')) {
@@ -279,7 +324,10 @@ add_action('wp_head', 'renova_meta_description', 1);
  * SEO优化 - 自动添加Canonical URL
  */
 function renova_canonical_url() {
-    if (is_single() || is_page()) {
+    $article = $GLOBALS['renova_article'] ?? null;
+    if ($article && is_page('disease-science')) {
+        echo '<link rel="canonical" href="' . esc_url(home_url('/disease-science/' . $article['slug'] . '/')) . '">' . "\n";
+    } elseif (is_single() || is_page()) {
         echo '<link rel="canonical" href="' . esc_url(get_permalink()) . '">' . "\n";
     }
 }
@@ -292,7 +340,18 @@ function renova_og_tags() {
     echo '<meta property="og:locale" content="zh_CN">' . "\n";
     echo '<meta property="og:site_name" content="星沙华夏医院">' . "\n";
     echo '<meta property="og:type" content="website">' . "\n";
-    if (is_single() || is_page()) {
+    // 科普文章详情页 — 文章专属OG标签
+    $article = $GLOBALS['renova_article'] ?? null;
+    if ($article && is_page('disease-science')) {
+        echo '<meta property="og:title" content="' . esc_attr($article['title']) . ' - 星沙华夏医院">' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr(mb_substr($article['excerpt'], 0, 120)) . '">' . "\n";
+        echo '<meta property="og:url" content="' . esc_url(home_url('/disease-science/' . $article['slug'] . '/')) . '">' . "\n";
+        echo '<meta property="og:type" content="article">' . "\n";
+        echo '<meta property="article:published_time" content="2026-07-12T00:00:00+08:00">' . "\n";
+        echo '<meta property="article:modified_time" content="2026-07-13T00:00:00+08:00">' . "\n";
+        echo '<meta property="article:author" content="叶龙觉">' . "\n";
+        echo '<meta property="article:section" content="' . esc_attr($article['cat'] ?? 'ED科普') . '">' . "\n";
+    } elseif (is_single() || is_page()) {
         echo '<meta property="og:title" content="' . esc_attr(get_the_title()) . ' - 星沙华夏医院">' . "\n";
         echo '<meta property="og:description" content="' . esc_attr(wp_trim_words(get_the_excerpt(), 30)) . '">' . "\n";
         echo '<meta property="og:url" content="' . esc_url(get_permalink()) . '">' . "\n";
@@ -304,7 +363,7 @@ function renova_og_tags() {
         }
     } else {
         echo '<meta property="og:title" content="长沙ED治疗 | Renova冲击波治疗阳痿 | 星沙华夏医院">' . "\n";
-        echo '<meta property="og:description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，引进以色列Renova线性冲击波治疗仪（国械注进20173095171），叶龙觉博士坐诊。专业治疗血管性ED，非侵入、不手术、不吃药，有效率90%+。9600元/疗程。">' . "\n";
+        echo '<meta property="og:description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，引进以色列Renova线性冲击波治疗仪（国械注进20173095171），叶龙觉医生坐诊。专业治疗血管性ED，非侵入、不手术、不吃药，有效率90%+。9600元/疗程。">' . "\n";
         echo '<meta property="og:url" content="' . home_url() . '">' . "\n";
         echo '<meta property="og:image" content="' . RENOVA_URI . '/assets/images/renova-device.jpg">' . "\n";
     }
@@ -314,50 +373,25 @@ function renova_og_tags() {
 add_action('wp_head', 'renova_og_tags', 3);
 
 /**
- * Schema结构化数据 - 诊所信息
+ * Schema - 诊所信息（通过inc/schema.php中更完整的renova_get_clinic_schema输出）
+ * 此处保留简化版本作为fallback
  */
 function renova_schema_clinic() {
+    // 优先使用 inc/schema.php 中的完整诊所Schema
+    if (function_exists('renova_output_clinic_schema')) {
+        renova_output_clinic_schema();
+        return;
+    }
+    // Fallback — 简化版本
     $schema = array(
         '@context' => 'https://schema.org',
         '@type' => 'MedicalClinic',
         '@id' => home_url('/#clinic'),
         'name' => '星沙华夏医院',
-        'description' => '专业治疗血管性勃起功能障碍（ED），引进以色列Renova线性冲击波治疗仪。叶龙觉博士坐诊，长沙县星沙镇北斗路16号（星沙汽车站斜对面）。',
         'url' => home_url(),
         'telephone' => '15909415555',
-        'address' => array(
-            '@type' => 'PostalAddress',
-            'addressLocality' => '长沙市',
-            'addressRegion' => '湖南省',
-            'streetAddress' => '长沙县星沙镇北斗路16号（星沙汽车站斜对面）',
-            'addressCountry' => 'CN',
-        ),
-        'openingHoursSpecification' => array(
-            '@type' => 'OpeningHoursSpecification',
-            'dayOfWeek' => array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'),
-            'opens' => '08:30',
-            'closes' => '17:30',
-        ),
-        'medicalSpecialty' => '男科',
-        'availableService' => array(
-            array(
-                '@type' => 'MedicalProcedure',
-                'name' => 'Renova线性冲击波治疗ED',
-                'description' => '使用以色列Renova体外线性冲击波治疗仪（国械注进20173095171），通过低能量冲击波促进阴茎海绵体血管新生，治疗血管性勃起功能障碍。非侵入性，轻中度ED有效率90%以上。',
-                'procedureType' => 'NoninvasiveProcedure',
-            ),
-        ),
-        'founder' => array(
-            array(
-                '@type' => 'Person',
-                'name' => '叶龙觉',
-                'honorificPrefix' => '博士',
-                'medicalSpecialty' => '男科',
-            ),
-        ),
-        'priceRange' => '9600元/疗程',
     );
-    echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+    echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
 }
 add_action('wp_head', 'renova_schema_clinic', 10);
 
@@ -386,7 +420,56 @@ function renova_schema_article() {
 add_action('wp_head', 'renova_schema_article', 11);
 
 /**
- * Schema - FAQ（FAQ页面 - 扩展到20+问答覆盖长尾词）
+ * Schema - 科普文章详情页（Article + FAQPage + Breadcrumb）
+ * 为 /disease-science/{slug}/ 生成独立的结构化数据
+ */
+function renova_schema_disease_article() {
+    $article = $GLOBALS['renova_article'] ?? null;
+    if (!$article || !is_page('disease-science')) return;
+
+    $url = home_url('/disease-science/' . $article['slug'] . '/');
+
+    // MedicalWebPage Schema
+    $schema = array(
+        '@context' => 'https://schema.org',
+        '@type' => 'MedicalWebPage',
+        'headline' => $article['title'],
+        'description' => $article['excerpt'],
+        'author' => array(
+            '@type' => 'Person',
+            'name' => '叶龙觉',
+            'honorificPrefix' => '博士',
+            'jobTitle' => '主治医师',
+            'medicalSpecialty' => '男科',
+        ),
+        'reviewedBy' => array(
+            '@type' => 'Person',
+            'name' => '叶龙觉',
+        ),
+        'publisher' => array(
+            '@type' => 'MedicalClinic',
+            'name' => '星沙华夏医院',
+            'url' => home_url(),
+        ),
+        'mainEntityOfPage' => array(
+            '@type' => 'WebPage',
+            '@id' => $url,
+        ),
+        'inLanguage' => 'zh-CN',
+        'about' => array(
+            '@type' => 'MedicalCondition',
+            'name' => '勃起功能障碍',
+            'alternateName' => array('ED', '阳痿'),
+        ),
+        'keywords' => $article['tags'],
+    );
+
+    echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+}
+add_action('wp_head', 'renova_schema_disease_article', 11);
+
+/**
+ * Schema - FaQ（FAQ页面 - 扩展到20+问答覆盖长尾词）
  */
 function renova_schema_faq_page() {
     if (!is_page('faq') && !is_page('常见问题')) return;
@@ -415,7 +498,7 @@ function renova_schema_faq_page() {
         array('q'=>'手淫会不会导致阳痿？','a'=>'适度手淫一般不会导致阳痿。但过度频繁的手淫（如每天多次）可能导致：①暂时性的性疲劳②心理上的焦虑和负罪感③对正常性刺激的敏感度下降。如果已经出现勃起问题，减少手淫频率、增加运动、保证充足睡眠通常有帮助。如果症状持续，建议就医评估。'),
         array('q'=>'阳痿会不会自己好？','a'=>'如果ED是由暂时的因素（疲劳、压力、酒精、情绪波动）引起，在因素解除后可能自行恢复。但如果症状持续超过3个月，或出现晨勃消失，则提示可能存在器质性病变，一般不会自行好转，需要专业的医学评估和治疗。拖延不治可能加重病情。'),
         // 就医类
-        array('q'=>'长沙治疗阳痿哪家医院最好？','a'=>'选择阳痿治疗机构应关注：①正规资质——持有医疗机构执业许可证②专业设备——是否有NMPA认证的冲击波治疗仪③医生经验——医生是否有丰富的男科诊疗经验④透明收费——费用是否公开透明。星沙华夏医院符合以上标准，叶龙觉博士亲自坐诊，引进以色列Renova原装设备。'),
+        array('q'=>'长沙治疗阳痿哪家医院最好？','a'=>'选择阳痿治疗机构应关注：①正规资质——持有医疗机构执业许可证②专业设备——是否有NMPA认证的冲击波治疗仪③医生经验——医生是否有丰富的男科诊疗经验④透明收费——费用是否公开透明。星沙华夏医院符合以上标准，叶龙觉医生亲自坐诊，引进以色列Renova原装设备。'),
         array('q'=>'看ED需要做什么检查？','a'=>'ED的常规检查包括：①详细问诊和IIEF-EF量表评估（了解ED类型和严重程度）②生殖系统体格检查③血常规、血糖、血脂、性激素（排除内科疾病）④必要时行阴茎彩色多普勒超声（评估血管功能）。检查费用约200-500元。不需要住院，当天完成。'),
         array('q'=>'来你们诊所看ED需要带什么？','a'=>'建议携带：①身份证②既往就诊记录和检查报告（如有）③正在服用的药物清单④如有糖尿病/高血压等慢性病相关的病历或检查结果。就诊前不需要特别准备（如禁食）。为保护隐私，请提前致电预约独立的就诊时间。'),
         // 保养类
@@ -461,7 +544,13 @@ function renova_schema_breadcrumb() {
     if (is_front_page()) return;
     $items = array();
     $items['首页'] = home_url();
-    if (is_page()) {
+
+    // 科普文章详情页 — 自定义面包屑
+    $article = $GLOBALS['renova_article'] ?? null;
+    if ($article && is_page('disease-science')) {
+        $items['疾病科普'] = home_url('/disease-science');
+        $items[$article['title']] = home_url('/disease-science/' . $article['slug'] . '/');
+    } elseif (is_page()) {
         $ancestors = array_reverse(get_post_ancestors(get_the_ID()));
         foreach ($ancestors as $ancestor) {
             $items[get_the_title($ancestor)] = get_permalink($ancestor);
@@ -563,9 +652,15 @@ function renova_wp_title($title, $sep) {
     } elseif (is_page('faq')) {
         $title = 'ED治疗常见问题 | 阳痿能治好吗 | 长沙治疗阳痿多少钱 | 星沙华夏医院';
     } elseif (is_page('disease-science')) {
-        $title = 'ED科普专栏 | 阳痿知识大全 | 硬度不够的原因 | 晨勃消失怎么恢复 | 星沙华夏医院';
+        // 单篇文章视图使用文章专属标题
+        $article = $GLOBALS['renova_article'] ?? null;
+        if ($article && !empty($article['title'])) {
+            $title = $article['title'] . ' | ED科普 | 星沙华夏医院 - 长沙ED治疗';
+        } else {
+            $title = 'ED科普专栏 | 阳痿知识大全 | 硬度不够的原因 | 晨勃消失怎么恢复 | 星沙华夏医院';
+        }
     } elseif (is_page('about')) {
-        $title = '关于我们 | 长沙男科专家叶龙觉博士 | 星沙华夏医院';
+        $title = '关于我们 | 长沙男科专家叶龙觉医生 | 星沙华夏医院';
     } elseif (is_page('contact')) {
         $title = '联系我们 | 长沙男科预约挂号 | 在线咨询 | 星沙华夏医院';
     } elseif (is_page('patient-cases')) {

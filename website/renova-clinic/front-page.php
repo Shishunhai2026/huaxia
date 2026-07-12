@@ -23,7 +23,7 @@ get_header();
                     国内外权威指南推荐的ED一线治疗方案
                 </p>
                 <p style="font-size:1rem;color:var(--text-gray);margin-bottom:20px;line-height:1.6;">
-                    长沙县星沙镇北斗路16号（星沙汽车站斜对面）· 叶龙觉博士坐诊<br>
+                    长沙县星沙镇北斗路16号（星沙汽车站斜对面）· 叶龙觉医生坐诊<br>
                     针对硬度不够、晨勃消失、中途疲软、PDE5i无效等ED问题提供专业诊疗
                 </p>
                 <div class="hero-features">

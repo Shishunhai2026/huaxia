@@ -1,129 +1,794 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<!--
-  星沙华夏医院 - XML Sitemap
-  提交到百度站长平台：https://ziyuan.baidu.com/linksubmit/
-  提交到Google Search Console：https://search.google.com/search-console/
-  提交到必应站长平台：https://www.bing.com/webmasters/
-  版本：3.0 — 完整12页 + SEO/GEO优化版
-  最后更新：2026-07-07
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-
-    <!-- 首页 - 最高优先级 -->
     <url>
         <loc>https://www.csrenova.com/</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 核心服务页 -->
     <url>
         <loc>https://www.csrenova.com/treatment</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 费用说明页 -->
     <url>
         <loc>https://www.csrenova.com/pricing</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 方案对比页 -->
     <url>
         <loc>https://www.csrenova.com/treatment-comparison</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 症状自查 -->
     <url>
         <loc>https://www.csrenova.com/symptom-check</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 男性保养 -->
     <url>
         <loc>https://www.csrenova.com/mens-health</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 关于我们 -->
     <url>
         <loc>https://www.csrenova.com/about</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 疾病科普 -->
     <url>
         <loc>https://www.csrenova.com/disease-science</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 临床证据 -->
     <url>
         <loc>https://www.csrenova.com/clinical-evidence</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- FAQ -->
     <url>
         <loc>https://www.csrenova.com/faq</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 治疗案例 -->
     <url>
         <loc>https://www.csrenova.com/patient-cases</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
-
-    <!-- 联系我们 -->
     <url>
         <loc>https://www.csrenova.com/contact</loc>
-        <lastmod>2026-07-07</lastmod>
+        <lastmod>2026-07-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <mobile:mobile type="pc,mobile"/>
     </url>
 
-    <!-- ===== 百度移动适配标记说明 =====
-         所有页面均为自适应设计(responsive)，PC和移动端使用相同URL
-         已在HTML头部通过 <meta name="applicable-device" content="pc,mobile"> 声明
-         也符合百度熊掌号/百家号移动适配规范
-    -->
+    <!-- ===== 100篇科普文章 ===== -->
+    <url>
+        <loc>https://www.csrenova.com/disease-science/boqi-kunnan-yuanyin/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yingdu-bugou-suan-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ying-bu-qilai-yuanyin/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zhongtu-piruan-zenme-huishi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yingdu-fenji-panduan/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chenbo-zhengchang-xinli-qiizhi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/bu-neng-wanquan-boqi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ying-yihui-jiu-ruan-le/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/turan-ying-bu-qilai/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chenbo-xiaoshi-zhengchang-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/tangniaobing-yinqi-yangwei-jiu-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chenbo-jianshao-yuanyin/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ban-ying-bu-ying-suan-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zenme-panduan-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ED-yanzhong-chengdu-fenji/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/meiyou-chenbo-shi-bushi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/nianqingren-wei-shenme-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/tangniaobing-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/gaoxueya-daozhi-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/shouyin-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yali-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/aoye-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xiyan-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-shenxu-yinqi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ED-xinxueguan-guanxi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/40sui-boqi-xiajiang-zhengchang/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xinli-yinsu-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/qianliexianyan-yinqi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changqi-jiangyayao-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/feipang-daozhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yaozhui-tuchu-boqi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-kan-ED-nage-yiyuan-hao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-zhi-yangwei-zuihao-yiyuan/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-yiyuan-paiming/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-najia-hao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-paiming-qianshi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changshaxian-nanke-yiyuan/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xingsha-nanke-yiyuan/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xingsha-zhiiliao-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-zuihao-yisheng/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-zhuanjia/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changshaxian-xingshazhen-kan-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xingsha-qichezhan-fujin-yiyuan/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-yangwei-kaopu-bu-kengren/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-kaopu-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-bu-kengren/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-zenme-zhiliao-zuihao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/bu-chiyao-neng-zhi-hao-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-neng-zhihao-duoshao-qian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zhiliao-boqi-gongneng-zhangai-fangfa/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/bu-shoushu-bu-chiyao-fangfa/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/di-nengliang-chongjibo-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/Renova-chongjibo-you-xiao-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chongjibo-vs-chiyao-xiaoguo/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xueguanxing-ED-zhiliao-genzhi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/weige-mei-xiaoguo-zenmeban/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xin-jishu-zhiliao-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zhongyi-zhiliao-yangwei-xiaoguo/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-ziji-neng-huifu-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/bu-chiyao-bu-shoushu-zhi-ED/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ED-wuli-zhiliao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/Renova-chongjibo-yici-duoshao-qian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-zhiliao-yangwei-duoshao-qian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-jiancha-feiyong/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chongjibo-zhiliao-ED-feiyong/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zhiliao-yangwei-yibao-baoxiao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/ED-zhiliao-yibao-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/9600-yuan-yige-liaocheng-zhi-bu-zhi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/weige-duoshao-qian-yi-pian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changqi-chi-weige-yinian-duoshao-qian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-zhiliao-yangwei-najia-pianyi/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xidinafei-vs-tadalafei-fuzuoyong/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/weige-shangyin-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/weige-changqi-chi-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chi-weige-yilai-xing-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/tadalafei-5mg-meitian-anquan-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/jinge-vs-wanaike-nage-hao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/weige-chile-mei-xiaoguo-yuanyin/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/xiaaili-fuzuoyong-da-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zhongyao-zhi-yangwei-you-xiao-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/liuwei-dihuang-wan-zhi-yangwei/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/qu-nanke-kanbing-ganga-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/kan-ED-xuyao-jiancha-teng-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-zenme-gen-yisheng-shuo/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yigeren-qu-kan-nanke-diuren-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/kan-yangwei-yao-zhuyuan-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/kan-nanke-xuyao-dai-shenme/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/nanke-jiancha-duoshao-qian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nanke-zhoumo-shangban/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-neng-chedi-zhihao-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/zhongdu-yangwei-hai-neng-zhihao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/tangniaobing-yangwei-neng-zhihao/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-zhiliao-xuyao-duochang-shijian/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chongjibo-zhiliao-hou-duojiu-xiaoguo/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yangwei-zhiliao-hou-fufa-ma/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/chongjibo-xiaoguo-weichi-duojiu/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/nianqingren-yangwei-tiaoli-huifu/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/laopo-rang-wo-kan-yangwei-zenmeban/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/changsha-nake-zhenggui-bu-huyou/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+    <url>
+        <loc>https://www.csrenova.com/disease-science/yingdu-bugou-tiaoli-chi-shenme/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile type="pc,mobile"/>
+    </url>
+
 </urlset>

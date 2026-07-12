@@ -17,7 +17,8 @@ define('RENOVA_BAIDU_PUSH_TOKEN', ''); // 填入百度站长平台的推送 toke
 
 // 所有需要推送的页面 URL
 function renova_baidu_get_all_urls() {
-    return array(
+    // Core pages
+    $urls = array(
         'https://www.csrenova.com/',
         'https://www.csrenova.com/treatment',
         'https://www.csrenova.com/pricing',
@@ -31,6 +32,20 @@ function renova_baidu_get_all_urls() {
         'https://www.csrenova.com/patient-cases',
         'https://www.csrenova.com/contact',
     );
+
+    // Dynamically add article URLs
+    $articles_dir = get_template_directory() . '/articles/';
+    if (is_dir($articles_dir)) {
+        $files = glob($articles_dir . '*.html');
+        foreach ($files as $file) {
+            $basename = basename($file, '.html');
+            if (preg_match('/^\d+-(.+)$/', $basename, $m)) {
+                $urls[] = 'https://www.csrenova.com/disease-science/' . $m[1] . '/';
+            }
+        }
+    }
+
+    return $urls;
 }
 
 // 百度主动推送 API

@@ -16,7 +16,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
+<header class="site-header">
     <div class="header-inner">
         <div class="site-branding">
             <?php if (has_custom_logo()): ?>
@@ -36,7 +36,7 @@
             ☰
         </button>
 
-        <nav class="main-nav" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="主导航">
+        <nav class="main-nav" aria-label="主导航">
             <a href="<?php echo home_url(); ?>" <?php if(is_front_page()) echo 'class="active"'; ?>>首页</a>
             <a href="<?php echo home_url('/about'); ?>" <?php if(is_page('about')) echo 'class="active"'; ?>>关于我们</a>
             <a href="<?php echo home_url('/treatment'); ?>" <?php if(is_page('treatment')) echo 'class="active"'; ?>>治疗项目</a>

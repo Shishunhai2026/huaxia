@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Clinic info (hardcoded throughout — use `grep` + `sed` to batch-replace if renamed)
 
 - Name: 星沙华夏医院
-- Doctors: 叶龙觉 博士 (PhD), 聂建军, 李威
+- Doctors: 叶龙觉 医生 (PhD), 聂建军, 李威
 - Address: 长沙县星沙镇北斗路16号（星沙汽车站斜对面）
 - Phone: 15909415555
 - Device: Renova (国械注进20173095171), 3600-5000 shots/session
