@@ -3,7 +3,31 @@
 # 注意：此文件用于Vercel预览环境，生产环境使用 website/renova-clinic/robots.txt
 
 User-agent: *
-Disallow: /
+Allow: /
+
+# 百度蜘蛛
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Google蜘蛛
+User-agent: Googlebot
+Allow: /
+
+# AI搜索引擎 (豆包/字节跳动)
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 2
+
+# 搜狗蜘蛛
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 1
+
+# 360蜘蛛
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://www.csrenova.com/sitemap.xml

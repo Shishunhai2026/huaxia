@@ -52,7 +52,8 @@ renova_breadcrumb();
         <div id="doctor" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px;">
             <div style="text-align:center;order:-1;">
                 <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-liwei.png"
-                     alt="李威医生"
+                     alt="李威医生" width="240" height="294"
+                     loading="lazy" decoding="async"
                      style="width:240px;height:auto;border-radius:var(--radius);margin:0 auto;box-shadow:var(--shadow-md);">
             </div>
             <div>
@@ -84,7 +85,8 @@ renova_breadcrumb();
                 <!-- 叶龙觉 -->
                 <div style="text-align:center;background:var(--bg-cream);border-radius:var(--radius);padding:40px 24px;box-shadow:var(--shadow-sm);">
                     <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-yelongjue.png"
-                         alt="叶龙觉医生"
+                         alt="叶龙觉医生" width="180" height="268"
+                         loading="lazy" decoding="async"
                          style="width:180px;height:auto;border-radius:var(--radius);margin:0 auto 20px;box-shadow:var(--shadow-sm);">
                     <h3 style="margin-bottom:8px;color:var(--primary);">叶龙觉 院长</h3>
                     <p style="color:var(--accent);font-size:0.9rem;margin-bottom:12px;">★ 院长 · 外科副主任医师</p>
@@ -95,7 +97,8 @@ renova_breadcrumb();
                 <!-- 李威 -->
                 <div style="text-align:center;background:var(--bg-cream);border-radius:var(--radius);padding:40px 24px;box-shadow:var(--shadow-sm);">
                     <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-liwei.png"
-                         alt="李威医生"
+                         alt="李威医生" width="180" height="221"
+                         loading="lazy" decoding="async"
                          style="width:180px;height:auto;border-radius:var(--radius);margin:0 auto 20px;box-shadow:var(--shadow-sm);">
                     <h3 style="margin-bottom:8px;color:var(--primary);">李威 医生</h3>
                     <p style="color:var(--accent);font-size:0.9rem;margin-bottom:12px;">★ 外科主任 · 主治医师</p>
@@ -106,7 +109,8 @@ renova_breadcrumb();
                 <!-- 聂建军 -->
                 <div style="text-align:center;background:var(--bg-cream);border-radius:var(--radius);padding:40px 24px;box-shadow:var(--shadow-sm);">
                     <img src="<?php echo RENOVA_URI; ?>/assets/images/doctor-niejianjun.png"
-                         alt="聂建军医生"
+                         alt="聂建军医生" width="180" height="199"
+                         loading="lazy" decoding="async"
                          style="width:180px;height:auto;border-radius:var(--radius);margin:0 auto 20px;box-shadow:var(--shadow-sm);">
                     <h3 style="margin-bottom:8px;color:var(--primary);">聂建军 医生</h3>
                     <p style="color:var(--accent);font-size:0.9rem;margin-bottom:12px;">★ 外科主任 · 主治医师</p>

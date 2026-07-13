@@ -277,7 +277,7 @@ get_header();
             </div>
             <div class="testimonial-card">
                 <p class="quote">"40岁以后明显感觉勃起功能不如以前了，听朋友介绍来做保养性治疗。做了之后晨勃恢复了，硬度也提高了，很满意。"</p>
-                <p class="author">— 长沙县星沙镇北斗路16号（星沙汽车站斜对面） · 45岁 · 男性功能保养 · 治疗时间：2024年</p>
+                <p class="author">— 长沙县 · 45岁 · 男性功能保养 · 治疗时间：2024年</p>
             </div>
         </div>
     </div>

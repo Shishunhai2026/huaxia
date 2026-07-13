@@ -269,10 +269,13 @@ add_action('wp_footer', 'renova_geo_structured_content', 99);
  */
 function renova_geo_entity_graph_output() {
     $schema = renova_get_geo_entity_graph();
+    // 仅在诊所Schema未输出时输出GEO实体图谱（避免与inc/schema.php重复）
+    if (!function_exists("renova_output_clinic_schema")) {
     echo "\n<!-- GEO Entity Graph for AI Search Engines -->\n";
     echo '<script type="application/ld+json">' . "\n";
     echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     echo "\n</script>\n";
+    }
 }
 add_action('wp_footer', 'renova_geo_entity_graph_output', 98);
 

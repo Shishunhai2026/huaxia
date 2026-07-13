@@ -6,7 +6,10 @@
     <meta name="baidu-site-verification" content="codeva-NhSWZTocno">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=yes">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <?php
+    // Robots meta is handled per-page via renova_meta_description() in functions.php
+    // Default: index, follow. Category filter pages: noindex, follow.
+    ?>
     <!-- 百度移动适配 -->
     <meta name="applicable-device" content="pc,mobile">
     <meta http-equiv="Cache-Control" content="no-transform">

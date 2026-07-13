@@ -112,6 +112,23 @@ function renova_enqueue_assets() {
 add_action('wp_enqueue_scripts', 'renova_enqueue_assets');
 
 /**
+ * Robots Meta — 默认index,follow; 分类筛选页noindex
+ * (header.php不输出硬编码robots，由此函数按页面逻辑控制)
+ */
+function renova_robots_meta() {
+    // 科普专栏分类筛选页：noindex避免重复内容
+    if (is_page('disease-science') && isset($_GET['cat']) && !empty($_GET['cat'])) {
+        echo '<meta name="robots" content="noindex, follow">' . "\n";
+    } elseif (is_page('disease-science')) {
+        // 文章详情页和列表页都可索引
+        echo '<meta name="robots" content="index, follow">' . "\n";
+    } else {
+        echo '<meta name="robots" content="index, follow, max-image-preview:large">' . "\n";
+    }
+}
+add_action('wp_head', 'renova_robots_meta', 1);
+
+/**
  * SEO优化 - DNS预解析（提升首屏速度）
  */
 function renova_dns_prefetch() {
@@ -123,7 +140,9 @@ function renova_dns_prefetch() {
     // hreflang: 中文中国
     $url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     echo '<link rel="alternate" hreflang="zh-CN" href="' . esc_url($url) . '">' . "\n";
-    echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($url) . '">' . "\n";
+    // x-default: 单语种网站应与zh-CN一致，指向当前页面（Google明确要求）
+    echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($url) . '">' . "
+";
 }
 add_action('wp_head', 'renova_dns_prefetch', 1);
 
@@ -248,7 +267,40 @@ function renova_get_page_keywords() {
             '冲击波治疗ED的临床研究','冲击波治疗ED研究',
             '低能量冲击波治疗ED证据','EAU指南冲击波治疗',
         );
-    } elseif (is_single()) {
+    
+    } elseif (is_page('symptom-check')) {
+        $page_kw = array(
+            'ED症状自查','阳痿自测','硬度自测','IIEF-EF量表','勃起功能自测',
+            '硬度不够怎么办','晨勃消失正常吗','硬一会就软了',
+            '如何判断是不是阳痿','阳痿的症状有哪些','阳痿分几种类型',
+            '心理性ED和器质性ED区别','ED严重程度分级',
+        );
+    } elseif (is_page('pricing')) {
+        $page_kw = array(
+            '长沙治疗阳痿多少钱','冲击波治疗ED费用','长沙ED治疗费用',
+            '阳痿检查多少钱','ED检查费用','治疗阳痿能用医保吗',
+            '冲击波治疗一个疗程多少钱','Renova治疗费用','ED治疗方案费用对比',
+            '伟哥多少钱一片','长期吃伟哥一年多少钱','长沙阳痿治疗医保报销吗',
+            '冲击波治疗和吃药哪个划算','9600元一个疗程值不值',
+            '长沙哪家治疗阳痿便宜','阳痿治疗费用透明',
+        );
+    } elseif (is_page('mens-health')) {
+        $page_kw = array(
+            '如何预防阳痿','男性功能保养','ED预防方法','改善勃起功能',
+            '什么运动可以改善ED','吃什么食物对阳痿好','凯格尔运动',
+            '40岁后如何保持勃起','男性功能下降','男性健康保养',
+            '戒烟戒酒改善ED','睡眠不足导致ED','压力导致ED',
+            '高血压ED预防','糖尿病ED预防','心血管健康与ED',
+        );
+    } elseif (is_page('treatment-comparison')) {
+        $page_kw = array(
+            '冲击波和吃药哪个好','ED治疗方案对比','阳痿手术好还是吃药好',
+            '冲击波vs西地那非','冲击波vs他达拉非','ED最佳治疗方案',
+            'PDE5i无效替代方案','中医治疗阳痿vs西医','不吃药不手术治ED',
+            '阴茎假体还是冲击波好','阳痿治疗方案怎么选',
+            'ED物理治疗和药物治疗','血管性ED治疗方案','心理性ED治疗方案',
+        );
+} elseif (is_single()) {
         $tags = wp_get_post_tags(get_the_ID(), array('fields' => 'names'));
         $page_kw = $tags ? $tags : array();
     }
@@ -343,14 +395,25 @@ function renova_og_tags() {
     // 科普文章详情页 — 文章专属OG标签
     $article = $GLOBALS['renova_article'] ?? null;
     if ($article && is_page('disease-science')) {
+        $article_url = home_url('/disease-science/' . $article['slug'] . '/');
         echo '<meta property="og:title" content="' . esc_attr($article['title']) . ' - 星沙华夏医院">' . "\n";
         echo '<meta property="og:description" content="' . esc_attr(mb_substr($article['excerpt'], 0, 120)) . '">' . "\n";
-        echo '<meta property="og:url" content="' . esc_url(home_url('/disease-science/' . $article['slug'] . '/')) . '">' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($article_url) . '">' . "\n";
         echo '<meta property="og:type" content="article">' . "\n";
+        echo '<meta property="og:image" content="' . RENOVA_URI . '/assets/images/doctor-yelongjue.png">' . "\n";
+        echo '<meta property="og:image:width" content="400">' . "\n";
+        echo '<meta property="og:image:height" content="595">' . "\n";
+        echo '<meta property="og:image:alt" content="' . esc_attr($article['title']) . '">' . "\n";
         echo '<meta property="article:published_time" content="2026-07-12T00:00:00+08:00">' . "\n";
         echo '<meta property="article:modified_time" content="2026-07-13T00:00:00+08:00">' . "\n";
         echo '<meta property="article:author" content="叶龙觉">' . "\n";
         echo '<meta property="article:section" content="' . esc_attr($article['cat'] ?? 'ED科普') . '">' . "\n";
+        // Twitter card for articles
+        echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr($article['title']) . ' - 星沙华夏医院">' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr(mb_substr($article['excerpt'], 0, 120)) . '">' . "\n";
+        echo '<meta name="twitter:image" content="' . RENOVA_URI . '/assets/images/renova-device.jpg">' . "\n";
+        return;
     } elseif (is_single() || is_page()) {
         echo '<meta property="og:title" content="' . esc_attr(get_the_title()) . ' - 星沙华夏医院">' . "\n";
         echo '<meta property="og:description" content="' . esc_attr(wp_trim_words(get_the_excerpt(), 30)) . '">' . "\n";
@@ -360,12 +423,18 @@ function renova_og_tags() {
             echo '<meta property="og:image" content="' . esc_url($img[0]) . '">' . "\n";
             echo '<meta property="og:image:width" content="' . $img[1] . '">' . "\n";
             echo '<meta property="og:image:height" content="' . $img[2] . '">' . "\n";
+        } else {
+            // Fallback OG image for pages without featured image
+            echo '<meta property="og:image" content="' . RENOVA_URI . '/assets/images/doctor-yelongjue.png">' . "\n";
+            echo '<meta property="og:image:width" content="1200">' . "\n";
+            echo '<meta property="og:image:height" content="630">' . "\n";
         }
+        echo '<meta name="twitter:image" content="' . (has_post_thumbnail() ? esc_url(wp_get_attachment_image_src(get_post_thumbnail_id(), 'large')[0]) : RENOVA_URI . '/assets/images/renova-device.jpg') . '">' . "\n";
     } else {
         echo '<meta property="og:title" content="长沙ED治疗 | Renova冲击波治疗阳痿 | 星沙华夏医院">' . "\n";
         echo '<meta property="og:description" content="星沙华夏医院位于长沙县星沙镇北斗路16号，引进以色列Renova线性冲击波治疗仪（国械注进20173095171），叶龙觉医生坐诊。专业治疗血管性ED，非侵入、不手术、不吃药，有效率90%+。9600元/疗程。">' . "\n";
         echo '<meta property="og:url" content="' . home_url() . '">' . "\n";
-        echo '<meta property="og:image" content="' . RENOVA_URI . '/assets/images/renova-device.jpg">' . "\n";
+        echo '<meta property="og:image" content="' . RENOVA_URI . '/assets/images/doctor-yelongjue.png">' . "\n";
     }
     // Twitter card
     echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
@@ -536,6 +605,48 @@ function renova_schema_clinical_studies() {
     echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
 }
 add_action('wp_head', 'renova_schema_clinical_studies', 13);
+
+/**
+ * Schema - VideoObject（首页专家视频）
+ * 6个三甲医院专家解读Renova的视频，增加视频SEO曝光
+ */
+function renova_schema_homepage_videos() {
+    if (!is_front_page()) return;
+
+    $video_meta = array(
+        array('name' => '三甲医院男科专家解读Renova冲击波治疗ED（一）', 'url' => RENOVA_URI . '/assets/videos/1.mp4', 'thumb' => ''),
+        array('name' => '三甲医院男科专家解读Renova冲击波治疗ED（二）', 'url' => RENOVA_URI . '/assets/videos/2.mp4', 'thumb' => ''),
+        array('name' => '三甲医院男科专家解读Renova冲击波治疗ED（三）', 'url' => RENOVA_URI . '/assets/videos/3.mp4', 'thumb' => ''),
+        array('name' => '三甲医院男科专家解读Renova冲击波治疗ED（四）', 'url' => RENOVA_URI . '/assets/videos/4.mp4', 'thumb' => ''),
+        array('name' => '三甲医院男科专家解读Renova冲击波治疗ED（五）', 'url' => RENOVA_URI . '/assets/videos/5.mp4', 'thumb' => ''),
+        array('name' => '三甲医院男科专家解读Renova冲击波治疗ED（六）', 'url' => RENOVA_URI . '/assets/videos/6.mp4', 'thumb' => ''),
+    );
+
+    $videos = array();
+    foreach ($video_meta as $v) {
+        $videos[] = array(
+            '@type' => 'VideoObject',
+            'name' => $v['name'],
+            'description' => '三甲医院男科专家教授对以色列Renova线性冲击波治疗血管性勃起功能障碍（ED）的临床解读',
+            'contentUrl' => $v['url'],
+            'thumbnailUrl' => $v['thumb'] ?: RENOVA_URI . '/assets/images/renova-device.jpg',
+            'uploadDate' => '2026-07-13',
+            'duration' => 'PT3M',
+            'publisher' => array(
+                '@type' => 'MedicalClinic',
+                'name' => '星沙华夏医院',
+            ),
+        );
+    }
+
+    $schema = array(
+        '@context' => 'https://schema.org',
+        '@graph' => $videos,
+    );
+
+    echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+}
+add_action('wp_head', 'renova_schema_homepage_videos', 13);
 
 /**
  * Schema - 面包屑JSON-LD（所有非首页）

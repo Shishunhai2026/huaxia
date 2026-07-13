@@ -3,13 +3,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <!-- ===== 首页 — 含图片和视频 ===== -->
     <url>
         <loc>https://www.csrenova.com/</loc>
         <lastmod>2026-07-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <mobile:mobile type="pc,mobile"/>
+        <image:image>
+            <image:loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/images/doctor-yelongjue.png</image:loc>
+            <image:title>叶龙觉医生 - 星沙华夏医院</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/images/doctor-liwei.png</image:loc>
+            <image:title>李威医生 - 星沙华夏医院</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/images/doctor-niejianjun.png</image:loc>
+            <image:title>聂建军医生 - 星沙华夏医院</image:title>
+        </image:image>
+        <video:video>
+            <video:title>三甲医院男科专家解读Renova冲击波治疗ED（一）</video:title>
+            <video:description>三甲医院男科专家教授对以色列Renova线性冲击波治疗血管性勃起功能障碍（ED）的临床解读</video:description>
+            <video:content_loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/videos/1.mp4</video:content_loc>
+            <video:publication_date>2026-07-13</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
     </url>
     <url>
         <loc>https://www.csrenova.com/treatment</loc>
@@ -52,6 +73,18 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <mobile:mobile type="pc,mobile"/>
+        <image:image>
+            <image:loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/images/doctor-yelongjue.png</image:loc>
+            <image:title>叶龙觉医生</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/images/doctor-liwei.png</image:loc>
+            <image:title>李威医生</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.csrenova.com/wp-content/themes/renova-clinic/assets/images/doctor-niejianjun.png</image:loc>
+            <image:title>聂建军医生</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://www.csrenova.com/disease-science</loc>
