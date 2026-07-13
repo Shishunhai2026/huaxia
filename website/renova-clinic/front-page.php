@@ -207,6 +207,57 @@ get_header();
     </div>
 </section>
 
+<?php $video_dir = get_template_directory_uri() . '/assets/videos'; ?>
+<!-- 三甲医院专家介绍 -->
+<section class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">专家解读</span>
+            <h2 class="section-title">三甲医院男科专家教授对Renova的介绍</h2>
+            <p class="section-desc">以下视频收集自网络，汇集了多位三甲医院男科专家对Renova线性冲击波治疗ED的临床解读</p>
+        </div>
+        <div class="video-gallery">
+            <div class="video-card">
+                <video controls preload="metadata" poster="" class="video-player">
+                    <source src="<?php echo $video_dir; ?>/1.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="" class="video-player">
+                    <source src="<?php echo $video_dir; ?>/2.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="" class="video-player">
+                    <source src="<?php echo $video_dir; ?>/3.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="" class="video-player">
+                    <source src="<?php echo $video_dir; ?>/4.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="" class="video-player">
+                    <source src="<?php echo $video_dir; ?>/5.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata" poster="" class="video-player">
+                    <source src="<?php echo $video_dir; ?>/6.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:20px;color:var(--text-light);font-size:0.85rem;">（视频来自网络，如有侵权，请告知，我们立即处理）</p>
+    </div>
+</section>
+
 <!-- 患者见证 -->
 <section class="section section-warm">
     <div class="container">
